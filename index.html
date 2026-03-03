@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Tushar Upadhyay | Data Analyst</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#111318;--surface:#1c1f26;--border:#2e3240;--border-light:#252830;
+  --text:#dde1f0;--muted:#7e8494;--subtle:#464c5e;
+  --accent:#7aa2f7;--green:#73daca;--orange:#e0af68;--purple:#bb9af7;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:14px;line-height:1.5;min-height:100vh;background-image:radial-gradient(ellipse 80% 50% at 50% -20%,#1e2235,transparent)}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+img{display:block}
+.page-wrap{max-width:1280px;margin:0 auto;padding:0 24px}
+
+/* HEADER */
+header{background:#1c1f26ee;backdrop-filter:blur(12px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:56px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:600;font-size:15px;color:var(--text);text-decoration:none}
+.nav-tabs{display:flex;align-items:center;gap:4px}
+.nav-tab{display:flex;align-items:center;gap:6px;padding:6px 14px;border-radius:6px;color:var(--muted);font-size:13px;font-weight:500;text-decoration:none;transition:background .15s,color .15s}
+.nav-tab:hover{background:#252830;color:var(--text);text-decoration:none;border-radius:6px}
+.nav-tab.active{color:var(--accent);border-bottom:2px solid var(--accent);border-radius:0;padding-bottom:4px}
+.nav-tab .count{background:#252a3a;color:var(--muted);border-radius:100px;padding:1px 7px;font-size:11px;font-weight:600}
+.header-status{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--green)}
+.status-dot{width:8px;height:8px;border-radius:50%;background:var(--green)}
+
+/* LAYOUT */
+.profile-layout{display:grid;grid-template-columns:248px 1fr;gap:28px;padding:24px 0 40px}
+
+/* SIDEBAR */
+.avatar-wrap{position:relative;margin-bottom:16px;display:flex;justify-content:center}
+.avatar-img{width:220px;height:220px;border-radius:16px;border:2px solid var(--border);object-fit:cover;object-position:top center}
+.online-badge{position:absolute;bottom:8px;right:8px;background:#2ea043;border:2px solid var(--bg);border-radius:100px;padding:4px 10px;display:flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:#fff}
+.name{font-size:24px;font-weight:800;line-height:1.2;margin-bottom:4px;font-family:'Plus Jakarta Sans',sans-serif;background:linear-gradient(135deg,#dde1f0,#7aa2f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.username{font-size:18px;font-weight:300;color:var(--muted);margin-bottom:12px}
+.bio{font-size:14px;color:var(--text);margin-bottom:16px;line-height:1.6}
+.btn-connect{width:100%;padding:8px 16px;background:linear-gradient(135deg,#1e2d4a,#1a2540);border:1px solid #7aa2f740;border-radius:8px;color:#7aa2f7;font-size:13px;font-weight:600;cursor:pointer;transition:all .15s;font-family:'Inter',sans-serif;text-align:center;display:block;text-decoration:none}
+.btn-connect:hover{background:linear-gradient(135deg,#243566,#1e2d58);text-decoration:none;border-color:#7aa2f7}
+.profile-meta{margin-top:16px;display:flex;flex-direction:column;gap:8px}
+.meta-item{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted)}
+.meta-item svg{flex-shrink:0;color:var(--subtle)}
+.sidebar-section{margin-top:20px;padding-top:16px;border-top:1px dashed #2e3240}
+.sidebar-title{font-size:14px;font-weight:600;color:var(--text);margin-bottom:12px}
+.skill-tag{display:inline-flex;background:#1e2230;border:1px solid var(--border);border-radius:100px;padding:3px 12px;font-size:12px;color:var(--text);margin:3px 3px 3px 0;transition:all .15s}
+.skill-tag:hover{border-color:var(--accent);color:var(--accent)}
+
+/* MAIN */
+.section-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.section-label{font-size:15px;font-weight:700;color:var(--text);font-family:'Plus Jakarta Sans',sans-serif}
+.section-link{font-size:13px;color:var(--accent)}
+
+/* README */
+.readme-box{background:var(--surface);border:1px solid var(--border);border-radius:6px;margin-bottom:28px;overflow:hidden}
+.readme-header{padding:10px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);background:#181b22}
+.readme-body{padding:18px 24px;font-size:14px;line-height:1.7;color:var(--text)}
+.readme-body h2{font-size:18px;font-weight:700;padding-bottom:6px;border-bottom:1px solid var(--border);margin-bottom:14px;margin-top:22px}
+.readme-body h2:first-child{margin-top:0}
+.readme-body p{margin-bottom:12px;color:var(--muted)}
+.readme-body ul{padding-left:20px;margin-bottom:12px;color:var(--muted)}
+.readme-body li{margin-bottom:4px}
+.readme-body strong{color:var(--text)}
+.readme-body code{background:#1f2937;border:1px solid var(--border);border-radius:4px;padding:1px 6px;font-size:12px;font-family:monospace;color:#79c0ff}
+
+/* EXPERIENCE */
+.exp-list{display:flex;flex-direction:column;gap:0;margin-bottom:20px}
+.exp-item{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--border-light)}
+.exp-item:last-child{border-bottom:none}
+.exp-avatar{width:40px;height:40px;border-radius:6px;background:linear-gradient(135deg,#1f3249,#2d4a6e);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.exp-body{flex:1}
+.exp-title{font-size:14px;font-weight:600;color:var(--text);margin-bottom:2px}
+.exp-company{font-size:13px;color:var(--accent);margin-bottom:2px}
+.exp-date{font-size:12px;color:var(--muted);margin-bottom:8px}
+.exp-desc{font-size:13px;color:var(--muted);line-height:1.6}
+.exp-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.exp-tag{background:#1a1e2c;border:1px solid #2e3240;border-radius:100px;padding:2px 10px;font-size:11px;color:var(--muted)}
+
+/* VOLUNTEERING */
+.vol-item{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--border-light)}
+.vol-item:last-child{border-bottom:none}
+.vol-avatar{width:40px;height:40px;border-radius:6px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.vol-badge{display:inline-flex;align-items:center;gap:4px;background:#1a2d1a;border:1px solid #2ea04330;color:var(--green);font-size:11px;padding:2px 8px;border-radius:100px;margin-bottom:6px}
+.vol-org-type{font-size:11px;padding:2px 8px;border-radius:100px;background:#1f1a2e;border:1px solid #bc8cff30;color:var(--purple);margin-left:6px}
+
+/* SKILL BARS */
+.skill-rows{display:flex;flex-direction:column;gap:12px;margin-bottom:28px}
+.skill-row{display:flex;align-items:center;gap:12px}
+.skill-name{font-size:13px;color:var(--muted);width:150px;flex-shrink:0}
+.skill-bar-bg{flex:1;background:#21262d;border-radius:100px;height:6px;overflow:hidden}
+.skill-bar-fill{height:100%;border-radius:100px}
+.skill-pct{font-size:11px;color:var(--subtle);font-family:monospace;width:32px;text-align:right;flex-shrink:0}
+
+/* PROJECTS */
+.repo-list{display:flex;flex-direction:column;gap:0;margin-bottom:28px}
+.repo-item{padding:12px 0;border-bottom:1px solid var(--border-light)}
+.repo-item:last-child{border-bottom:none}
+.repo-name{font-size:15px;font-weight:600;color:var(--accent);display:flex;align-items:center;gap:8px;margin-bottom:4px}
+.repo-badge{font-size:11px;padding:2px 8px;border-radius:100px;border:1px solid #2e3240;color:var(--subtle)}
+.repo-desc{font-size:13px;color:var(--muted);margin-bottom:10px;line-height:1.55}
+.repo-meta{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--muted);align-items:center}
+.lang-dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+.placeholder-link{background:transparent;border:1px dashed var(--border);border-radius:6px;padding:4px 12px;font-size:11px;color:var(--subtle);font-style:italic;display:inline-flex;align-items:center;gap:4px}
+
+/* CERTIFICATIONS */
+.cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:22px}
+.cert-card{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:12px 14px;display:flex;flex-direction:column;gap:6px;transition:border-color .15s}
+.cert-card:hover{border-color:#7aa2f770;box-shadow:0 0 0 1px #7aa2f720}
+.cert-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.cert-icon{width:36px;height:36px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;font-family:monospace}
+.ci-oracle{background:#4a1a00;border:1px solid #ff6b0020;color:#ff8c42}
+.ci-tutedude{background:#001a3a;border:1px solid #1e90ff20;color:#58a6ff}
+.ci-nielit{background:#1a0030;border:1px solid #bc8cff20;color:#bc8cff}
+.ci-boston{background:#001a10;border:1px solid #3fb95020;color:#3fb950}
+.cert-verified{font-size:10px;padding:2px 7px;border-radius:100px;background:#1a2d1a;border:1px solid #2ea04330;color:var(--green);white-space:nowrap}
+.cert-name{font-size:13px;font-weight:600;color:var(--text);line-height:1.4}
+.cert-issuer{font-size:12px;color:var(--muted)}
+.cert-link-btn{display:inline-flex;align-items:center;gap:5px;background:#1a2035;border:1px solid #7aa2f740;border-radius:6px;padding:4px 10px;font-size:12px;color:#7aa2f7;text-decoration:none;transition:all .15s;margin-top:2px}
+.cert-link-btn:hover{background:#202840;border-color:#7aa2f7;text-decoration:none}
+.cert-placeholder{font-size:11px;color:var(--subtle);font-style:italic;border:1px dashed var(--border);border-radius:4px;padding:3px 8px;display:inline-block;margin-top:2px}
+
+/* CONTACT */
+.contact-box{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:24px;margin-bottom:32px}
+.contact-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.contact-btn{display:inline-flex;align-items:center;gap:8px;background:#1c2030;border:1px solid var(--border);border-radius:8px;padding:8px 16px;color:var(--text);font-size:13px;font-weight:500;text-decoration:none;transition:all .15s}
+.contact-btn:hover{background:#222640;border-color:#7aa2f750;text-decoration:none;color:var(--accent)}
+.contact-btn svg{flex-shrink:0}
+
+footer{border-top:1px solid #2e324050;padding:24px 0;text-align:center;font-size:12px;color:var(--muted)}
+footer span{color:var(--text);font-weight:500}
+
+@media(max-width:900px){
+  .profile-layout{grid-template-columns:1fr}
+  .avatar-img{width:120px;height:120px;border-radius:12px}
+  .cert-grid{grid-template-columns:1fr}
+  .cozy-grid{grid-template-columns:1fr}
+}
+
+/* ── TABLET ── */
+@media(max-width:768px){
+  .header-inner{flex-wrap:wrap;height:auto;padding:8px 0;gap:6px}
+  .nav-tabs{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:2px;padding-bottom:2px}
+  .nav-tabs::-webkit-scrollbar{display:none}
+  .nav-tab{white-space:nowrap;flex-shrink:0}
+}
+
+/* ── MOBILE ── */
+@media(max-width:520px){
+  .page-wrap{padding:0 12px}
+  .profile-layout{gap:14px;padding:14px 0 24px}
+
+  /* Header */
+  .logo{font-size:13px}
+  .header-status{font-size:11px}
+  .nav-tab{font-size:11px;padding:5px 9px}
+  .nav-tab .count{font-size:10px;padding:1px 5px}
+
+  /* Sidebar */
+  aside{display:flex;flex-direction:column;align-items:center;text-align:center}
+  .avatar-wrap{justify-content:center}
+  .avatar-img{width:90px;height:90px;border-radius:10px}
+  .online-badge{font-size:10px;padding:3px 8px;bottom:2px;right:2px}
+  .name{font-size:19px}
+  .username{font-size:14px}
+  .bio{font-size:13px}
+  .btn-connect{max-width:240px;margin:0 auto;display:block}
+  .profile-meta{align-items:center}
+  .meta-item{font-size:12px}
+  .sidebar-section{text-align:left;width:100%}
+
+  /* Sections */
+  .section-label{font-size:13px}
+  .section-header{padding:10px 0 6px}
+  .readme-body{padding:14px 14px;font-size:13px}
+  .readme-body h2{font-size:15px}
+
+  /* Experience */
+  .exp-item,.vol-item{gap:10px;padding:10px 0}
+  .exp-avatar,.vol-avatar{width:32px;height:32px;font-size:15px;flex-shrink:0}
+  .exp-title{font-size:13px}
+  .exp-company{font-size:12px}
+  .exp-date{font-size:11px}
+  .exp-desc{font-size:12px;line-height:1.5}
+  .exp-tags{gap:4px;flex-wrap:wrap}
+  .exp-tag{font-size:10px;padding:2px 7px}
+
+  /* Skills accordion */
+  .acc-header{padding:8px 11px}
+  .acc-label{font-size:12px}
+  .acc-count{font-size:10px}
+  .acc-body.open{padding:8px 11px 12px}
+  .cozy-tag{font-size:10px;padding:2px 8px}
+
+  /* Projects */
+  .repo-item{padding:10px 0}
+  .repo-name{font-size:13px;flex-wrap:wrap;gap:4px}
+  .repo-desc{font-size:12px;line-height:1.5}
+  .repo-meta{flex-wrap:wrap;gap:5px;font-size:11px}
+  .repo-badge{font-size:10px;padding:1px 6px}
+  .cert-link-btn{font-size:11px;padding:4px 9px}
+  .proj-body{padding:12px 12px}
+
+  /* Make metric cards single column in fraud project */
+  .proj-body div[style*="grid-template-columns:1fr 1fr"]{display:flex!important;flex-direction:column!important}
+
+  /* Certs */
+  .cert-grid{gap:8px}
+  .cert-card{padding:10px 12px}
+  .cert-name{font-size:12px}
+  .cert-issuer{font-size:11px}
+
+  /* Contact */
+  .contact-box{padding:14px}
+  .contact-links{flex-direction:column;gap:8px}
+  .contact-btn{font-size:12px;padding:8px 12px}
+
+  /* Back to top */
+  .back-top{width:36px;height:36px;font-size:15px;bottom:16px;right:14px}
+
+  /* Dataset stat cards in fraud */
+  .proj-body div[style*="display:flex;gap:10px"]{flex-direction:column!important}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="page-wrap">
+    <div class="header-inner">
+      <a class="logo" href="#">
+        
+        tusharupadhyaydelhi
+      </a>
+      <div class="nav-tabs">
+        <a href="#overview" class="nav-tab active">Overview</a>
+        <a href="#projects" class="nav-tab">Projects <span class="count">4</span></a>
+        <a href="#certifications" class="nav-tab">Certifications <span class="count">4</span></a>
+        <a href="#volunteering" class="nav-tab">Volunteering <span class="count">2</span></a>
+      </div>
+      <div class="header-status"><span class="status-dot"></span>Open to Work</div>
+    </div>
+  </div>
+</header>
+
+<div class="page-wrap">
+  <div class="profile-layout" id="overview">
+
+    <!-- SIDEBAR -->
+    <aside>
+      <div class="avatar-wrap">
+        <img class="avatar-img" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAP/A0sDASIAAhEBAxEB/8QAHQABAAICAwEBAAAAAAAAAAAAAAECAwQFBgcICf/EAFcQAQABAgMEBgQICgcGBAYBBQACAwQBBRIGERMiBxQhIzEyM0FCUggVUWFicXKRJDRDU4GCkqGxwRYlY6Ky0fBEVHPC0uEXJoPxJ1Vkk6PiszVFZXTy/8QAFwEBAQEBAAAAAAAAAAAAAAAAAAIBA//EABgRAQEBAQEAAAAAAAAAAAAAAAABEQIS/9oADAMBAAIRAxEAPwD40AAAAAAAAAAAAAAAAAAAAAAAAAAAAAABUFt4qsACQQJAQJ3J3AqLbkAgSAgSAgSgANy24FRbcgECQECQECTcCBO5O4FRICBICBICBICBICBKdwKi25G4EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAqLKgsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlCQAAAAAABACQAAAAAAQCRACRCQAAAAAQCRACQAAAAADegBIhICdyAE7jcgA3ISgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAIAAABKAEgAAAIAAABKAEgAAgAAAABKAEgAIAAAAAEgAAAISgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEbwSI3pAAAAAAAE7jcCBO4BAkBAk3ggTvAAAAAQJQAAAC28EAAITuQAAAAAI3pAAAAAAAAAAAAABG8EgAAAJQAkQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiSFgFU7k7kghO4AAAAAAAAAAAQEgAABO9ACd6AAAAAAABO83oSBvQAAAAAI3JAAAASgFU70gAACN6VQTvSAKgAAAsKrAAAI3pAAAAAAAAAAVBYRFIAAAAI3pVAWFVgAAAAAAAAAAAAAAAAAABICEgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACdwIE7jcCBO43AgTuNwIAAAAAAABAkBAAAAAAAAAAAAAAAAAAAAAAAAAAAAKiyNwIWAAAAAAAAAAAAAAAASAbgAAAAAAAAAAAAAAAAAAAAAAAAAAAAABbSAqnckA0gAAAAAAAAAAAAAAAAAAAqLAKiyNwIAA3ISAgSgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADcAbkgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAtpAVFgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADSiXgkBUWNIKoSAgSgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAAAAAAAAAAAAAAACwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACosAqhbcgECUAAAAAAAAAAAAAAAAACoCwqneCRG9IAAAAJAAAAAAAAAAAAAAAAAAAAAAAAFgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEbkLAKoSAgNwAAAAAAAAAAAAAqsAqAAACwqAsKgLgAAAAAAAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAAAAAAqyAKiwAAAAAAAAAAAAAACosAqLKgAAAAAAAAAAAAAAAAAAqLKggSAgAAAAAAAAAAABVYBUWVAAAABcAAAAAAEAneISAAAAAAAAAnchYFVgAAAAAAAAAAAAAAAFgEaUgAAAAAAAAAAAAAAAAAAAAAAAACNJpSAqLAKidKAAAAAAAAAAAAAAAFVlQEJAQJ3IAAAAAAAAAAAABUWVAABcAAAAAAAAAAAAAAAAFgAAAABOlIKiwDGssAqsAAABuSsCoAAAAAAACErAoLqggSAgSjcAAAAAAAAAAAAAAAAAAAAAqsAqLKgAAAAAAAAAAAAKrAKiyoIEoAAAAAAAAAAAVWAVABcAAAAAAAAAAAAABZVYAWAVWAAAAAAAAAASAAAAAAAAAAAAAAAAAAALKgAG4A3J0pBQSbgQJ3G4EAAAAAAAAAAAAAAAAKrAKiyoAAAAAAAAAAAAKiyoIEoAAAAAAAAAAARuSAkAAAAAAAAAAABO4jguAAAAAAAAAAAACQAAAAAAAAAAAAABOlIKp0pAAAAAAAAAAAAAAAAAV3G5YBj0pXRpBUTuRuAAAAAAAAAAAAAVWAVAAAAAAAAAAABUWVBAlAAqAsAAAAAAACQAAAAAAABO5cFNy4AAAAAAAAAAAAkAAAAAAAAAAAE6QQnSkAAAAAAAAAAAAAAAAAAAAAAAAAAAABXcblgFBO4kCAAAAAAAAAAFVgFRZUAAAAAAAAAAFRZUEKro0gAAAAAAAAkAAAAAEx8FtKQAAAAAAAAAAAAAEgAAAAAAAAAnSCFgAA3ABuNwAbjcAG4AAAAAAAAAAAAAAAAAAAAAAAAAAAABVC4CglAAAAAAAAAAAKiyoAAAAAAAAAAAAIl4Krq7gQAAAAACQAAZAVWAAAAAAAAAAAAAAEgAAAsConSkFVgARpSkCMQAAAAAAAAAAAAABO5IKp3JARuNyQEbjckBXchcBQ3LbkAgSAgSAgTuQAAAAAAAAAAAACguAoAAAAAAAAACosqAAAAAAAAAAAACskLS8FQAAAASsLAAAAAAAAAAAAAAABFcFVgAAAAAAABIAAAAAAAAAAAAAsAAAAAAAAAAAAAAAKrAKiyoAncgAAECQECdyAAAAAAAAAFF0aQVAAAAAAAAABUAAAAAAAAAAABXcsAoJ3IAABk0pAAAAAAAAAAAASAjckWAAAAAAAAABIAAAAAAAAAAJ3JAAAAAAFQWAAAAAAAAAAAAAAAAABUWAVAAABAkBAAAAAAAAI0o3LAKCdyAAAAAAAFVgFQAAAAABUBYVAWFQFlF1QQADKAAAAAAAACQAAAAWAAAAAAAABIAAALAqLAKiwCoyAAAAAAAAAAAAAAAKiwCosAqLKgAAAAAAAAAAAAqLAKgAAAgSgAAAAAABXcsAoJ3IAAAAAAAVWVAAAABUAAAAAAABCQGQAAFQWVBKRZVaLcCKQaoAAWAAAAAAAAFwRuNyQAAAAAABYAAAAAAAAAAAAAAAAAAAAAAARpQsAqLKgAAAAAAAAAAKrAKiyoAAIEoAAAAAAAVksbgUCQAAAAAAComXigAABVZUAAAAAAAWAWV1AAAzUiwGAkGqAAAAWAAAABO4EJ3AAsAAAAAAACwAAAAABuNwAbiMQBO5G4AAAAAAAAAE7gQJAQJNwIE7jcCFV0AqLKgAAAAAAAAAAAAqLKgAAgSgAAAAAABRdGkFQAAAAAFVgFQAAAVAAAAABYAABmpFgMUJBoAAAALKrAAlIhIKAABZEfBIAAAAAACyI4LAjcncAAAAAAAAAAAAAALbgUF0aQQCwAAAAAAAL046gY5J3OZt8jrVO+h5ftRw/d449ilajaWt3KjCFKvw/ap1NWH3g4jQjc5PXDieh1U/aY61hxKdStac0afmpy9JH9HyA4/cbkgKaRYBUAAAAAAAAABVYBUAECUAAAAAAArJC6gAAAAAAKiyoAACqyJeAIAAWVWAAAWBmAkGgAAACwJBBuSAAAAAAmPgCQAAWBU0rAAJAAAAAAAAAAAAABYFVgAAABIIAAcrY2FL013+z8yuS5Z1q7p9Yq8ChxMNUvXHB3DOsq+L+rfFl3SzCnc1MeajHthH6WHjh9QOs2+W29byXFv5faa91YQj/tFKMvo9uDk82tKNOp5OX7Lh6kKP0AbFnY2lTuq13S/+4rcWGXU/JmMP4tLhavYVjSBtRyutU/F50q/2ZM9nYXFv5+71cvN2uO8vknpl9FzmU8a6p8GtOeniR/f6wX6hd9/Cl1qVCjp63WjH3vLh9ns7cSzp8Hh8KHcU6mun+chrjuxjj8uHlxwRtZfUbfMpW+WejjTwhUlq82OH+vBxdj1ijxLj2Y8gMNTHvP7skU58OpxfLJeOitU936Xm/g5WWV8G0jW7qpT/tKOOif6fUDjri361T6xS9J7Uf5/U43S5y1vKNrUqcKlwOJHT70Iy+XD14LRtqV5U8nDl+TlHySBwA2Ly2rUfPDzNcECUAqLAKgAAAAAAAKrAKoSAgAAAAAAESBUSgAAAABVYBUWAVNKwCoAAAAALJAAAAAAWAIpQAkAAAAABZG5cAAAAAABIAAAAsCosAqLAKiwAqskFYpSbgQAlIlCVKAbFGl5fpA1tzcy2yrXF3Hk00/NLV4ObyvLeNp1z4cv8Lkb7C4t6dS00Uo8bd5vHdhLfy/pBp5XY6qev45t41Iy9DqxjjNvZbnFvRv/AMLq29f2Y8OnjxP2sNzg6lbq9/8AhFKEub2fn9eHzt7OrSdTTmNGtCX9pRj6X64ezL5flBtZ1TtLipKdG45dWMqfE8+/97gbijDm+k3akbvh66XeRlLm5sMEZfbdYuKnJ3lPn+UE5PSt+PRu63o41MKVb9by44/V4OMzSlwbvR/re2rzjU6/0peb+XY1byfGBrywcns7fwsbulcVocSPllH/AF/FxscDSJcpn3V77NuLaQ08veU5f6/e07rrdSnwfLGPsx8G5Y1oVLf3qlPdH9Hy4fKtdSnxPe9mMtO7EU46nR4dPz/yc3sznHU7evRuO8p1PSUKnbCrh4T/AE44eGOHyOHvIzlU52HfpEtzOKXf67f0fmj9Xz/zUymUKl/z1erRqek9eG7HH3VJXMKlpwvze/m+ZioxhKnU/P6sOGKbdxL8LqQrejqVNNSPq+toXFhWjXlwaM9Lk82uOsU+sT83/bcrfZjDqFClb/jNShw7mX1S34Y/d2Y/9wcNKjWj56M2NmqS0sdSQKoSAhVYBUWVAAAAAAAVWAVQlAAAAAAACqyoIAAAAAAAAABEvFCZeKAAAAAXAAASkWBSgABIAAAAAAmPgC4AAAAABETGIAnSkBGlIAAAAAAAACQAAADcAAAMtvByeW2lXj8bRql7LTte7p63I2uZdV5580vZiDn8vvrSnUjb3Fv6SPm9Ufr+VbPoZTRoUJwvp3cvao04+X6sXA5lc1b6vT0ZdwO880pfN9zSuLedHzz4n/DkC1xWnUqa/L/Fnsczq29f8Iq1alOXL3ksZOI1+wton78Ob7wdro18kuqFThaKVSPl7tTq/V6dTq8O/lU1cSMsN2nc4e6y2rb8PrFLmlT1cP17vnbFrnHBp8KlSpfs7gTdd55Kun+0l2uNlb3HE977LsFjR+Mu9uKvDoR/Nx7GrdXlWjadUoznp1Y+WngDhq1KdH24S+yy0becvPyo0e3/AImTj/2yhs2dSla/7PS1fnKns/VgzyvIe35qjiqlOcfIx1J1ogtfVpxqe61tU5NutW41pGHtU5amtHlEsccWanPTz+6xeUqYpUz3FadTTD83T/fiUYcNhp4r1paRKtZjqYd4Rl3kdZWlqqS+0KUAAQlEgAAVFlQAAAAAAFZLKggAAAAABVZGkEI3JAQAAAAAAAAqsqAAAAC4ACwAAAJAAAAAAFgFlVgAAAAASBFYAAAAAAAAAAAEgAAACwCJeCQFWa3pcT6LFubVvy0PpS5QVupd5oh5Ys+S2F3m2ZU8vsaPHr1PL7On9PyNOt6SXtOa2bsatapbUbet+E3dTh040/Pp3gtUvq1j+D5jb8WMt3cS8J/Viw8XLLr0VLq1T3alxySw+b5HoGfbIfG1pUhaf7BTjx63D+fd+jH5MPXi6zZ7O1ZX9TL/AMUpxp8SvUqUcMan0Y7vex+YHCVrOHE5+qx/4dTHFaj1S3/F/SfnKjvmW7BX2YV+r2NjO7u6e6NTV6P6W/Hsej7F9Bm0N1fa62TZLaU/Lxqkp1tH1U9+nV9e9I8Lo5PnN9zwt6teV3U4dOUe3i/RhHxk9r6O/g4Z3fWnXtpNGW8T0Np5qn/qer9V9DbB9FeSbJ1+vW/4bmUt0ZXNxT3zj9nw0/Vh2O8VrPiU9FWfL7vhgD5Q/wDALaG6r1IW+bW9Syoy0atPDhP7GGHbu+dan8G++4n4RnPVqfm/B9+P78X1jwaXDjRhojGMeWMezTh9TFUowlyaAfKF18Hajb+hvqt3U/tqO/D+ODpu0nRfd5H+N5NSp0/954Msaf8AHfF9sVKEI+44y+trepTlCrRpSjLzRlHs+7wUPgu42Mvr7V1SjDVT/M9rqGbZVmeW1+Fd29WP6r7X206NNm8y/C7GHxXf+zWs5cP74+Ev04PMc02Sz7mpXdvZX9Onv7yVvUjj+nRq/wAOAPmbf7aJYvX77o9ndc/UbWw/s41Jy/jDBwN90aZtT5+6p0o+17yh57LFVzecbOZjY09c4ao/RcHJImM9LNcR4lOOhrs9viCkYKybNPDza4NWQlAAoABAlAAAKiyoAAAAAAK7kLqAAAAAAAqACBKAAAAAAAAAVAAABdZVYAAAEgAAAALAAACY+KQAAASAALAAAAAAJSCRSkJ3AACwCqwCosAiPgkAAAWpw4lRkrSRRl/eUrS7wGezo8apT/w+9j/rxdro5rDK6fBsdHW/y93GPbqxw06cPkww8Oz19rrNjLh09FHmqVP7rbt4cHn19/7wPQ9ldocxyu7p2NvfTp9ZlhK75fa9mMt7tdSj8cXdDLqOWcO/ubnXUqcTnq4/L80dzyOxnprxnOfElq1SlJ6v0c3PBv8Aq9pccevcy76vw93Cw3eqWP8AJKntHRLs7Y8eNKjRhGnQ3w4cY7vre42dpSt6EYQhp5fZdY6LdnaWT5FTrT9JV55Sl87uUmJYLirCnTlOeinGMfN7rpOabYQ691e0pXHVu2Mrvlww/fj4O0ZxhO6qRt/LT9r6XzOl7WZVR4Evzf0fZ/R4EU07jbPM7epUnDqte2jv01JS8360d+Dpl5005nb39Sl8TW9T2eDUraJzx+hLtjj9nHdj/B1XabJOp1JVssuKtlU5uajWxp/3PL+55fnU8w49SdWdKvKpHRU7vu7in9KHhv8AnwaPoSx6a6N1X6vcZHdWVT6Ut8N/q5uzsxZbzpOyy4pxuKM4cOppjp9cZ+Eo/fuwfOVvnVWNCnb6/R+Xidv6u9nrV51NM4cuqWqpH1b9+/8AiHl9L5bn1jeWmuFXVq/mzWteFOpL2tP83i+wtzccDz/qvSKdedrlvWLjzNiXYM4nY1KHPD2fdwef59aW9Sp7Gn3WpnW1fdy/Nx+k89z7a6cqdScKv95Y5raTLbfqFSGik8iz7Z6jKpLRDSz7RbV5hcU48K75fd95wEdobv8ALcwOKvrCta+eHL7zVduy+5pZl+CXH5TyydYvLadrd17efmo1NKROqdSmwSkz28J8CX0WuAAAqsAqhICAAAAVAAAAAAVksqCAAAAAARJCyoAAIEoAAAAAABUAAAGUAAEgAAAACwAAAACwJAAAAAWVWABKUoTuBSgAAAAABZEfBIAAAAAAAAMlPlY44rau7Wt4av1Qblv3dPXPl/jJvWNpcXlTueWPbzephsaUOJrnPm/wudp334B1SENUfZ/sv88cflByOzuTW9Sv304Rpx5pR+jHxe39B+S299tRQtLeH4FHTV5qe7GXr3PItk8Yd3aXE6tCnKPfVI+7HH+fzPpX4PdG3+Nql3b6/Lw46vd3IHvFOMI09EPZ3R+5FSS0fRsNwDSuq0I6v7zom02b8apK3t+81cvKz9Im0nxfQlaWnNU+7/WLq2Vzu8pt+t5nmGW5PxebruZdsoR/sqO/DV9qWOBFNPMtis2zK04vUastX0t2DzDazZLM7Pia7Sf6so4/zdy226Y+iLLaFS3u852k2svfzlGtPCj+zHGFP9zw3arbzZDNv/6Nk1/lteXl5u2X7GKxiqUJ0bjRVhpdj2byuGZXHBedfGtxKp+PVa/0annj83b2vSeiu6neZlQhDzamYPcuj3o9safDq1YT95s9L2XfF+z1S4hy04x0vStm4Tp2FDX+bwcR0rZV8YbH3sIQ1SjRxlH62D4fz7Nq3EqQ1uoXV9WrOS2klw7upD6WLrspcSo6JTUxnJhjb1pOUs8urVlqlvOj5/2gUy+0n7HmixbWc2bcb87ThU/u7v5OZyfDvIuM22hw82p/8HD+Mkji7X0cv7Tl+5qs1vPvP1sFbjlr1QYwAAAFVlQQJQAAAqsAqAAAAACqEoAAAAAVWVAAAQkBAAAAAAKiqwAAMoACQ3gCN6UpW0iopSwqAsKrAERMfEFgAAAAAWERWA3AAAAAAAAAAsAlIApQCY+IJAAVWVAZrdhdx6J8jtM42hq3ebQnLJ8roSvL36eny0v0y04A4mj3dp7f0pe9i2rXHv6f0v8AC9T6OdjdpNrL+7vssyaF7aVN8KlG67ujqlv+fDdu8cHSv6MXFPPalpxerU6PFp1qlanu0YUpaZ/vBzOS2la4oU7jura24cuHzdvCw5cJ4/Xj2fqvon4MtXrFCn9Gjp1eue7wxfN1nlvWsip3fGhw6enh+bvo4duHqfRHwWanf1IcWerq1PiU/wB+/D9CR9ERY7heMla0QdKzDIa15nXWPQR0+aPbU+vDH1Ol7VdBexGdWnWLu4zend8TiVruV1xZz+bn34afmev1IMNSH0NQPmfph6PMp2i2fyq0yG/2RtL3JJSpfg9TgU69KXm4ke3GM8McPqeJWuwdxkO0Npd5hm2zvDoV9fDp5lqx5f0PuLaTZXZ7OKcvjDIcvu5f2lHDF1Wt0dZNRqf1TkeUWX9pRtYYT+/xFPlrbTKK21WZdby7LLWh71S31eP144YPUvg47Kws7/8ArGt1u5jUw4Pd7v0PTqfRpCp6W44Ufox3u47J7G5ZkfPb65V/ekDstvCHLohpjpwTeUYXFCVGfllvZacNK4l+d/wgshq7O9IV7b/k61SUqf3ukZbRtOt04Xdx1an7Uu3HH9z6D+FxlGraG5nD0lOUasZf4nztUtuJp0aKFePtS8FDt8toNk7GhwbfrVeX5zg+b73GRrWmYV6nVNcZfmKnZq//AGcJa5bcdbjO7hppRlqlzYYtu+hWrXcbixpT7r9GoG5ktX8PjBg6RIac2of8H+clsrlOpdxraNPec0frU6Qp/wBbUIe7bR/jJI69b+np/awLieqvU+1im1jqrxY1AAAAAACqF1AAAAAFVlQAAAARLwQmXggEAAAAKyWVkAAAAAhKAAAAAY1lVgAAZVRMQSAlIkFKAAEx8ELMoAaWJF4oS2AA1QAALAJCIAAAAAAlILaQEbkxCKlLAAKrAKrAlIApQAA9Q2Vh8X9G3V6PLXz3MadL5+FT8cPvk8vj54vcuj/J55pnXR3lnB1U61aVX7p6v5JH2d0e5BY5DsvZWNjb8OMaMdXL7TwLpg6PP6yza3t+Wvd3daVSpq1S4Eo8Ty+rHGb3HpM2hns7sndztJ/hPB0x5vLvw8f8nyd0N5nmdTpnocaje5pbXv4Ne+apwoy9v9GPj828HD2NHr2RXdWjCcZWlhXqcOnT7aPCwh4y9fr7Nz174Jca1S/ubi49JK0h5Y7sHW+nDoxu9k8pqbX5NV/BK9/wq9L6NX1/L2y8XpPwf8tuLPVWuIadUfL9nd4/JuB7jHFka8ZMsZAiUFJQZ1JA1KlKDTuJQi2bytw3S9os8hRpy+iDm6l9CLk8rq8bneNVts6XE883pnR7UuLrKY31b8r5fqB2vSjciKd4Pmj4VlCEtoaH9taf4XzbeZVCXPD9l9G/CivKMtrLbRW5qVPTJ4PmVWFO7+jU9pQ4GOU0vbo833N61s+r+T+85q10S0zcnwLeXsQB1W1tYU6+v3pOsbZY8TaW5h+b0w+7B6BeUYU6jzzaCPEz29rez1nGPzpHHUeWnUn+r97C2rzu+5ayhACUgClAACJJAUAAAAABUWVAABUWVAQkkCAACQAqAAAAACAAAAY1lVgAAXWABIAAAAAmPgkisAAAlCQAAFgAABMQiAAACdyUpAFKAAEx8ULAAAAAARAEoAABanJ9M/B/rUa1fYrMP92ubi2/a8r5lez/AAc8xq3VDMtnoVuHc6o3llL+1gyj2v4SWa33x7LJqP5Th6f1nqnRH0e5fsDsfwvxvMq8eLe1/anUl4/o3djhLrZzLukjJbS7uPwLNKMY9/p8tSPvYfNi9No9etbS2hW/DeXCNStHl7d3mYp0b4QFt8ZdGvUaUJ9/f22nTHt9JhL+SnR7adVp0uNW7+vz8Px04L9OVXTs1YfRzGjLh+OM8fLGP1b/ABbuydhOzrxrXFxxJV93zYQ3R8uHrEu3RiuimrWlpBaU2vWuNLDcVNLr+bZlw/f+0DU2wz7qtCWj3XhO2G1XEryhRreZy/SZnV9Wp14UfRx81R5zsbk93tFmVKfpKEZftDY710a7N3GfXcatx6OPM9zzS8zHZvIv6uyyd3wafd06bT6P8l+KctjDRw9W7V+h23jUqdPnmNfMG2nTf0t5fXqcHZPq1D2alSxqy/vOd6L+m/anMLDNK22Oy11ZdWtpV6F7TtakaM8Y+xLV4PUNstr/AInoSpW89NeT5Q6WNvtusyu7vLK2c3XxbWqegj5N2AOrdI22lxmWbVLitrr1Kn+vFwlHMJ1rDRW82rCX2XGcStGvLrEOb2oyX5FJdry267uLmbe7dOyuu5CVzpBy2YVnRsy7vNr249mNTu/+JLB2HrM6nI4baSVLqlP3pb5S/kkdeqS1VNagKAAECUJSAKUAAoJQAAAAAqsAqAAqyMYAAIEoAABUAAAAABCUAAAqAAADLFKEpSAKUAAAncC4AAACUJAWVWAAAABMQiJSCwpQAAAAAAsqsAAAAAACREUgISsCjmtjc9uNndobTM7TllQqYScMJH6F9Fe1VjnWS2mbZZ3nH9PTj7Etz1C1p6qnG1z/AJPzl6I+kvM9hcyjwe8spVMOJRfUuW/CJ2TllPWOsaanD9GD0vpkuLHL9jJZjfQ4nVK9OrT+XzfycVkd/DiU60JwqU+JGVOp70Z4eL5i286T8x6SM2q2nXurWlHfpoxl5np/Q7ntveZbaZZcVua0o8LiR+T2dQp9DUapdYuC2fzLrFPvpwl9KPhu/wCzma0u7BqVuZxd5l/WHKR9IyXE6MaEtYl8y9PF5C1r/E1vojKpzVqn0WjsTtPb5f1a3tNHD/wtP4TUK1TaXXb/AJWm4Xo76K9v88sevZZd2VtT/Jxut+OtSn1PsvnkLihTt+fiRjqly/zU2ks85uq9OeXVuHT/ACn1OjbP9H3SbTp0OLtflVlpj6O3sZb/ANbHHHdi5un0f59U77O9pOv6fyMo1I0ZfXuxSOPzrJ8m/wD7tnNlGp26u+wlP7nlt9sJ1rNvjCjcW9ey80q2rdjGPqd12wyfazJ7Sp8XbF5bf/m/iu87z69E8MMfueDdIG29xUsLnL7i3uspufJwK1GVKpu7O35PuYOL6WMrtLPPteX1YXNPy1JU+10uMma3rQ4fdT830t7DcaJU9cFpbFrV01ItypVcJb1u8cpvBsW9XvHG7VVYSr0KPu025b+dw+fVeJmVT6KUtABSgAAAEAJSAKUqhICAAAAAAVFlQWY2RjAAAQkBAAKgAAAAAAAhEvFIlKoClAAM24AAAAABePiiKwAAAACYoTEE6UgAAAAC0cEJj4JAAAAAAABZKVVoiYtwEJGqQAlIbhKlAACyoCyqwCq+9ROoHPbCy/8AMtCj+e3we1dFt3VynbCnb8/f+1p+R4t0fz4e2eV+7x8P3vozaaEKdpHRDgcPdKMo+1ilT1jIbrqd3wteqNeWMo83vc3/AGd/ta/Ep6Po6ZfofO+X7WUalfK8zo3GqhX1W1TV4UqscP3b/lesZLtHSuK9DR+Up6pA7XUqcNxmaXfcS+y2LrvKeuDR6tOtye82JeObRbPQzjayNxd+j7NMf0veNkcvt8vymhb28NMYxcZR2Yt6nPOHN/hdmsaHV6ejXqYNiTj80vaVrTlPi8P3W5Wq6XUNto9YsJQ4M5e7pB0TbbpD6jX4PGspcSWOriR3fwdIyvpOy78Nq5n1e9j2U48sKmEI4b/Lq/g6n0iZLd1LupxbS6p0I7/Zl/k8zvKWnko/s+tQ7D0gZjsXn2ZVK1vlMLSvU3aalGnhS8Ps9mO95rmVnWtan4PVnUpuTra+Itp4gOAjCcnOyjpoMGiEa/2S4rAtRn3jgrrHVXl9rFylSfDoSn9FwwAAAAAACEoAABUAEbhKAAAAAFVkS8QSxrKgAAAAgSgFQAAAAAAAFF1AAAAAZgAAAATHwZotHxSDQAAAATFCYgsAAAACUpTHwSqspQAAAkBYEgClBEASAAhICAEpSApQACwqsAqsA29n63V89sq35uvH92L6w20yy4zDYynmdjb8SpT08SPvUvW+RreXDr05/SwfbfRbUnebNU4f2eH3aUqeF7L3Nxa51UyarDqlHtjWj7HNh2S7fkeuZHfQs69pbzq0u4p8Onp8Jxlu/m4XpE2MrZbntfMbS34lO5p4d3LwjL16XUbPMuq3dCfCqxqW2+nWp/P6pYA+pMlzKF1b6J+k8v2sHMUYvCNkdra3DjCtPy/3sHpuQ7RQuOTXBsS71azbjqsc2pUfb8zk7fOLeXnrQYOTrQ7to3GiPsOOzDbDKbWnKfF1Rj5tPy/I6dn3SHY0acpwnDliKcztVwo2kuT/APZ4zttk2TXl3+I2+qXtRjux/cvtN0icbidXu9Ufzfqq73n19tfVrU9HJGX2vKpLQzjY+x5tE9Ol1rMslhb+Sbl77aTTDnq6pOv32ccbUocDmEOHXau9kvq3EqMFTGFGGuf/AP0kMwx4dpo9qp/BxTLcVp1qmuaBLGLKpABuqAGgACARIEAAISAgAAAAAFZKry8VAAAAAESSiQKgAAAAAAASUXkoAAAADMAAAzUi0VVosFgFKAAAGUExQkiVgGqAEgkFAsqsAAzQWBiQBSgAAAEhEAAAFgFQEpAFKFlQFgAH2f0L95lNp/wYf4Xxg+0ugnCFTIrSr/Zx/wALKp6lnGUwzLLeDVh+Tx+94f0gbEzt7+V3Shyy3eXzvoeWHcR+y4DaSwhdWn2fMwfN0aFaz/Ox93U3cv2quLG4p9Yn+s7rtRkcKfkg83z6z4f6rYPRst2xhKh6XVH96mcbX1Y06k4eWMf0vHLe8nb1GatnGqn52pcttFtXdyp1J8Wfq9r5XTMw2huKnJcc2lfMK3GcLcUdVSU1CLzNZy+y424vp+x+0tUoNetaCWjWrzkrTnOTPwGWjShFmjDuhT72rPS4u6rdYqfRj5YtrPJ6rvR7MY8rQYoFlQAAVFlUpAG6oAaCsllZAgAAAESEoAAAABWSq0lQAAAAESSiQKgAAAAAAAhVYBUAAAGYAABKRkY2QABSgAAAEgJFgFACYgAALKgLAszEgDVAAAAADNSJQk1QA0WFVgAGUVAIkWVGqWFQFn2t0C8uS2UP7OP+F8Uxw1VIvubohsJ2uRWU/wCxj/hwZVPVIwnHnhzUmrfQ4nPSblrPTT9vys0qUK3k7uX0fCTB0nOMr6xqdHz7ZPiU5cF7FdWfv/tR8HHXGW0ZVJclXSD5T2m2Zu7WvLRRnGTo2bY3FrU0VYTfXG1mz1Gt/wBUYvEukTZmjGnKrwZg8pjmOr209bt/PxXHZtYVrWpL3XEyxXqXOyuKXvtC8v4RcZKbGalsdanJeM+8azJHxYpjziWqvT+zg1G1m3no/ZxaYAAAAALAxgJSAKUSUWRIEAAAAISAgAAAFVQAAAAARJKAVAAAAAAQuoAAyiosqRIA1TMAAAlIyMbIAApQAAAkSAoWiKxWZUiUJIADVACRZYFAAAAAAzUgDAEobgkA1QmKFmgACoCQAUC1GnOtU5F7W2ncVPdpx80mzeVIU6HCo8sf8QN/ZewhebS5bl9vDrNzXuYU/m82/H9z9Adl8rhY2FPR9n+D5F+Djs5On0jbOXGY0fx+nOvQ/wCHhhLT9Xbhj9z7Xy+HDpxgkZ6NLTT+ito0s7HKPuClqdbT/wBLHUo0anouX6PqX8vn5fpKaQdcz6nWo09c7f8AWj4PG9vK1LiVO5hF71fa6dOXO8u24t4XHE41vSl4g+b9qqVHvZwhB5/eQ7yT1bbjL7SjxNFvCn9mpji8qzCOmpLzqS0aiq0ozRHAErR8DQyU4Ax5lo4dD3veaTazSXo2pHxBAtKKoAAAAIl4ITLwQzABDQABUAAAAAEAAIl4pAVVWVAAAABMvBUkAqAzUgDVAACAAAAVWVSAChmFlQAEpGRjZAAFKAGUCIkiVlQaoWVTEFoiY+CAAAAGVK0VlI+C7YoAAAAASkShLcUAje0EoSzAAaJilXeAAAL29GdxX4MFre2q3FTuofrOwZbYdXofS9qTLRp3UIW9DgwcfZ208wzKNvz80cZSlHt7MMN/8MG9m2PsOX6ObvLLPDPZXceJd3Fhja2n9ljU9JOUsfox0/PqaPZ8v/8ALPSNsnd9X6tTyvKcs6zR+1DvNXu4756sX1lThCPI+WJbM2OX7J2l3Wu+s3uY9Wq161apuq6LiNSnp0+PdyjHte99E+0E8+2Eyu4uPxuhTxs7un/bUseHj+7dikdylD3FNX2FaM/YX3QkKWjLu2Gpo+yvo0q1MZ/aEtW8tuJT87zfbazuObR7P0Xpcq1L33UNrrm3jQqa+FKPu05Y4CnzF0gUK3Eqd88vzKj3j2PbrG0rV6nu+680zSjaceWil/ebqXV5UvoKcJydSFGXsMfBaOOX3staLDIGlmGPeR+i14tqPeXf62lqy5agM9v3nJPy/vRWo8NSnLS5CnKFSmDjBt1rdrypAoM3V/c5mKUJxBWXggAQAAACJIWkqAAAsqAiQlACqyoAAKgAAAgAESQtJVKQBSgEAAAAAiXihZUAFQbQAKgMxIyMbIwAFKAGUEoSRIA1QAC4AAAADKkZGNZsUsAAAAAzAAaAACNSFQZBTeyRhOoCEam1TtIe3Nt0aNGn5IA46jQuK3kg37HLtVTveZu6P2nI5TTh7jKLWtt7Hlchwe7+0yUaXeM1xDu/8KdHTc2pfhcYPZ/gj7K5DfX+dbQ59aW9eNhp4MrrdjRpb9W/GersxxeNZ5y38fo1GXZ+vWtc9rW06tXgY1NUqOrHhz+Tl8P3LH1pUzDL8w2Xr3eXZta2GS3NS+tbShwafsSwqU8PXjhhKUZers4nq8Wn0a7Q/EfSTc5HWn+CbR2lLMKH/wDsx7ur9+55pktWFSpHufa/7f6x+Z2TNtm822kr7OfEd3a22dWV/LqlSpU0wn3cp4w1+zvxp6cPnxQp9L0aupsxudLrWzN7fXlhQnmNjcWGZRjpubS4jz0p+GPy4Yxx9UsMccMfVi5G4q6fJ/k0c5Gtqat9c8NwsbycfJNoZxmndy5+YFs4znh05cGcPsvNdss+hw6n/dv59mMOBU73U8x2qzTVxIez97B1TajNesVJc7p15V4lSTks0rQlUk4yWOpsSw6EVItunDUStqsvYUOFrRal1y05Tdv2X2SzzarMvi7Z7Lp5hXju41Two0fnq1fLHDd8/b6sHZ8ystmOj2wqcLhZ/tV5OPUo/gtn73Ch7UvpY4foB41uY5T4lTX7Tapx7v3mGnRnUu40felygSo1o+wy0ZuxVLTiUO+5alPllH3cdzgbq2nRqeTlBbWwyjpFZAp5fItGtq86qtSHtgmVJilHStGelbXqBhGTSrLAFQARJAJABQAAISrLxBAAAAKgM1IiSUNUAAKrDMFQDUiAaoAAAAVWAVVAG0AAqsqzUjIxsjAAUoAZQShJEgDVACRMVlFwAFAAypFlViKWFVmgAAAAqACq+hlp0ga7LTp6mxGkzRgDDToM8YrbtK9PAF6dJsclOnr/AGUU+Vr1qvEqa9f2QbNvzVNc3N5bhqqOEs3NZayjl6dJW4npNfuNa6qd5LX5YxSOrbVek1scu5zqhV/PRwk3c0tuuU+Lzxodun6f/b52lefimV3f/p/c0etbN3NHgU5+79J3+xqVrrLalHL+7vfT2lT3binjxKUv2sMHkmzNx3EXftm7+tRqU60Pyf8AmKfT+wef5Z0hbEZTtJCl+N0f16NXDsqQ/Rjv+vDcyX2UX3nh+E0/uqfc8Z+DPm/xPt3tVsXWrabKvX+MrCMvp4YSlu/Rj/dfQuitT1cGf7QPPriHDqS166cvdl2Yuv5xb3Enqd1WuKlT8ItLepH7Lir632el+MWPD8eanWxp/oB4VtNGtT1dzPS8zz6lccSXJP8AZfUOebN7C1O5u8zzChKXs9a3ui5ts90X07uvS69n97Uj/wDWcOnLHH6eGH3sHztcZdOpz6OZSzyed1U0W+uvLV6OjHGrP9mO/F71GPR1ltCPxdsFb5p4c2ZX063N+th6sfvcp/4iXGV2FCxynLsqymXBx4lSxoxp46t3b+gHl+Q9FW1NxT408m6hbSjxOs5pWjbU93y82Ord9WDslvsH0dZDw7jazObrP5Sp642ljT4Nr+mp5pfuY9pNq77Pqn4xb1Y8GNOppj3m/D58d7QyvItqdoK8bTLLG64EvR6vR749jRXa7b2+6pUybZu0tdnMipejtrOnw+z5dWHbj/P173je0mNa4tK99onUoU/SVNPy9mG/68X1Psv8HudTvdrM5/KcTgW8f+ZxXwwMlynZXorynJMptLe26/mcKdSMY4cScaeE579/16VJfIdGDkdm6cI7WZXOfo414zl9mPNiwShp/W36eXx3dnZ+lyeztvVuM6tKVH0lTfCn6/N4fxB2DbKxhY7UZ7ae7fy0/ZnGNTD90nWLrD8k9Q6esorZX0sZtafnLKzry+1KjhDH/A8zuod+Diri20+Tmi15UnOxhpYbiyhU54csvd94HDSt1Ix0t2phOn54NatOANWtBRkpy41fRBudUBqRW3NngKygDUlBSTblgw1IA1xaUVQAAAAFFpSVAAAABUABAAAAAAqAlKA3ClAAAACslmMAAG4ACosqlKq8fFBEFgFKAGUEoSRIA1QAAtFVZKUgCgBtSAMBePioKUyCppBYIwZo0gYuEyU6TPGDLuBhjBeMGSOC24FIxWABkp4KL061Kn556fpArcVfYYIzZbiHdsFGH7IOSs8XM2eLgMvx4jmKNaFOn/rfj9TKOTqVuHT88Pe+b9LFRpTvKnGq6+rezT/O4/5Jt7Wdbvbvy+zR1fvl/k3Kc9X2kjUzKPd/65XXuDxNmqntcCty/e53NMNWqHl4bjdnYcahf2nvSl+9o57ZmvRp2kdc4R+1Lc9AyelcUeHcXFpmFOhV9FWqW86cJ/rY4fI6p0Q3NpZ571HM/i2nZXtCVCtK+p6oaoSjOHDx34aamMo4Rwlv3Y+t63mlvd5hku0t3cUs/p17mpC8o2XUdPfUpc0tUJ7p0dO/d2YYYY9opwNbO77ZHpG2a2ptO8trmj1W7oasMNWnw8fDHdJ9f29xxKFOc/ykcJcv1YY+Ph63xRt1KGYbH1KtLm6hWp3Mfq8J/wAX1P0I57PaDo2yfMK2vj8HhVNXvR7P5A7ruhJq3GW29xQl3MOb+bc0wX4MOHH6Il0TPNhIXVfXaaKerzSlvlj+jx3Os5h0XX3kt76cY09/D0x9rfh4/R8XskaOnn18x1ectWurPy6eUU8Kl0P5teUJdYvp06kt+rVH5PXHd6m/lvQPllvq+M82urv7PL/n2PaKlOl+V5vHzfPgwXFzRt9XJ5fdB0jJ+jTZbLeHwsv4kqW/m8PD5fldyymwha0NFK3pW0fdpsVxcXF1Tjb2+unxKnm1ey5OjDh09Hm+lLtElHD6HlfFXwsNqP6TdKnxTR/FMjoe95qkvF9X9I21lpsrsvd306tLrOnuadTfzy+R+e15mlXMNpc4zOt3kq1aX1dn8gd3yKnu2ByuxpUqOaXt3x+qUr7LYT4OqtqrUKEp+eco82Hhq9mfLuYujPJLSj8Iuyya3tLihaW2cVKVOjcbsZ0tPsy9Ut2LtGyOYZdnX9HshybMb3aG76pbQ4FS8p0Z1aevno6NMod3P3o8TTzQk4XoJ7z4QOW3Fa3uO+zOv6StxZ80/aqe32qHP/CwtuD0v8X8/k9GX7MpReH3kPM+h/hgUf8A4m5F/bZHU/u1nz5fQnxAUo+jSrR5dTJLDyg161Hicjr2YWlajUlPzU9XLJ2mnh3mtkpwhzQ80ZA4TIbSEeeftOe4MKlPn0I6rRj5OVlljqBpVMvpS8k9LVuLHS5SWLFUmDgK1FqVoaXO3WiTjrqnAHE1GNnuMGAAAAEAiXihZUAAAABRdQAAAAAAESQtJQEoAAAAAFZYqgyJAGqbglG4ABKVRZUFgFKVFVgF1FogkAAAABlStFKi8SKAGgAAC1OOoBmow1K1INmz5qH2QTTossYLRgvHAFdyZYLpBiQyS8WKQJFExkC0jRqVlJaIKaJ06eiHNH82z0+FWtODR83tR9f6PlWjBeNtCXn5gRZ06vobf9apLyR/zc5l9tRt+fXxJe1UlH+HyNOjLyw8uny/RbtGf04JG3Tn3i3lqaOVgjzVGb7YNfMvQS95pbGw42dXNv5pVJYNvNJ+41dge727ttf5apH2t3rB3S3o3ezu2Ftd2lXqkqVSjc068afbS3efdHHzet3+O0+yH9Jer29jmF/YXOqn/VNvT/rPVGUeFU7uFXX8uiWOHyuB6RMphRyy2uOr1Y8CtVta1WPySw3x5nc9jdoaubZT1e3sb2pVrWlvZ3NG1t6/V7eUOXlqcSjTpTn7XN2sU6llfG+JbvI7iE48SjVtKlGt54fJhL6W96f8DPOp1NnsyyS4n39pWw009Pq8uPb9eDyzPIW+U7YZlY5fOlw6FaPEjb+FGrHzw8PNhLx7ZfW5f4O+bfEvTdc2PltMy1R/b54fvaPr7V+q2afo/eakv1Gajy0xLPHFk3sMfApz1VNGvVpFKVKurn5/ssPBrVvf0+1y4NyNL6DYjESwU6XDpxhD2VLqtwaeuc4Rjpx/d6mzLxeNfCK2yt8r2elllvcQ67X9ntwqRjh44xx8AeLfCM6RbjOL+7tKNb8Cto48CPr1fe8Jyu3h1CPGnDTLTxqlTw5pduqXq3/93J7UX/xpXqVfNqk5TYW3tP6UZLC+zallNHrP47LRpoyjHHRv18m7GWGEe3sB6FthYbJ5tYV9obGxpdbtq06tpXym+o2lG3oxh4YVreMsJyjj4cTCE/nanwW7f4y6VMi/sNVeX6lOpOP78GfbrNc5t+j3rGbZTl9DMsyoRq/GmW2dO4svzc7WU4clKePZLVhjjH5otz4Hdv8A/E2hV1+jtriGn/0t3b+0DsHwzrbTt3svcfnMruKX7NTV/N853npH1X8Nqz/qzZPMPzd7cUP2qUf+l8sXEf5qg1qOPl/vNjhMMfBnBWUNOlMcNK9OGpby+wCvmTH3F44frJ0/QBrVJ/3WrKrq54T/AGW3eQ7v6LqeX3M7e7lD2ZSxBzMota4bGrVpmwXHhIHFXTVbN5JrAAAgABVZVlSANUAAiXgqAAAAAAAKykgAAAAAES8UqsoqARIA1Te0pAFUbmTcjclKgmURSkAAxrAAmOKAFwiAAAAMqRZUYLiIpbFADQbFrFrtu3gDLUpQqU1cvx9JBklHu2vl8vwup9kHJREU0/lASIAGKUWVSXgDDLxQSRLEEstNEowjTinVqBn8rPTa1NtUcAZqctLatWnpbUU0b3l9g1MVH2WSphqYMNxi0LW4rWu0uX3FH2fLpcjUhNwt9hw82sPZ5iD6FzatDNtms4uOL39ahRubbm81WlPnj4eO5x+wu0mTZbltlDNtpM9sOrZnKrUtKOutRuaEo+XT5adTCftetsdENb4wqfFNWEKnHtq1P5NOuGnD+S/RrG4o7Q1Mu9J3NTrdCpWp06Mo0vNxddOeOjD6OG9o0M6wq55wM26xtFmVPVUofGOaWtGlh72mPD80vl3uvXVe72f23yXOYfk60eJ/6ct/78HrW0V9kO1Fve5tkdW3r/FtCNepT4d3Sp0aEZadNLCWPCw8fDThji886RtFbIo3NHlqW1eNX9WW6IPsbI68L7LLa755RqRwlHV8n+sXKU/7ronQnmM77o5yec/NwOHL1+XHGO936iC9NlioyRBaKyqJS0g4zarN6WT5Lc31acI8KnjLm3vhvpQ2nuNoM6r3dxW9JvlGjH2PVh+57n8J7bbh/wDluxrQ5fxn6nzDcca+v/Jx/Zp8zBr9QrVrCvccKfcaeJ7nNjuwdj6P8tpZttL1Stl3X7aNCpx6PU514cPHdhzaccOH8uE8PLj9buW2WW0ch6GLS04NKne5lmdGnU5t+uMI4zx+7scP0e21K3yLaPM82u4f0e7ixzSy6rUuqtbXLXCfd1ISo6NHn1ePZuaNbpS2P2b2NtK9LIZ5vUld6O8uMw4NTx7Yzt9GGNSH09WPbu3u9/Axs+Jt3f3GuHcWFX/8lSEPl+g6Vt9PL6ewmT2Oz1p1nZ69zOpXtr+6uq1a4pVqUNNS3jTqRjKh5ubzYY+89m+Brs9C32ezTaSt5qtbqdOn80e83/p4v7gcr8NC043RXZXf+7Z1bfdKM44/yfH11hpqPt/4V1l1roGz+cPNbcCvH9WtD+UnxFec1QGlqgy05NaUu8ZY1FDappjjqYtaYyBmjisx72QGvec1Dzul1tdO7qfad0vIumZh+NVPtA5e1qaqClxi461raW5KeoHH3TAz3DAAgABMkAiXihMvFDKkAIoRLwQNEAAAAAAKyWVBACUgClAKgAMoqAxIApTkAivHxSlGlG5dO5SmLchlYwUQuAxy8UJl4qAsAyiY+Kyi5EgDVAAADKlZKgRS4gaL0/SOQo4NG39I5GiC9THu5OPt+7v4uRlg468npqR0ezIHI011dQCxvVIgtJWRqWBrVGKTPUi15A3KPNaRU9tOW46qEoLVI959oF6bcptOm2d4MuvUy08e7au9enLu0jctajcpzcZRk5CjLu2UTKf6zgM2x/C7b3uM7DU5XW885alOfu1MPL9pvI9a6Ia9xLaG04M6Uq8qkeHxI6u36vF3fNMt+KekmVHr13ltt12FeV/R7J0aVXzywx/i8o2Lueq5tYVYT06a0fa+V9B7aWNLMsysrujy/GOWe926qWOn+G4qkVI320VS5sc2y/Kr3IKWupR+L76vcXdX81VwjDCMMZY9nmi8+6pVvMiuaNaE9VWjKnU1R7Y44fL8knsFxc5hnFOpcW+z1Xq1a7pXVGpdZtwKVGrSw8IYR04aPlh24OBvsouJZlf3GYUerXdzX6zWo048m+Xby9uO+Pz72Dn/AIK+cUb7Yinaf7TbVpQqcvlwlzYfze20/wC6+Z/g78XKeknaHIdemn6XT2fLqw/di+lKLRuadTJHwUpxZhLG0s6vKVnYVas62nlx5pdun1+H6G68v6ftpPinZ7q9HXGpUqaY1NWnT2Y79P39oPlvpUzytm20t3cde4/ErY6Zad3Lh2J6J9l4bRZ7T41xC2oU6nE827GTqlxcwqZtLXzd55u3+L6r6D9m4ZXkVDRb29Tj95UlU37/AAYOh/Ceo0cv/ofkMOF3VGveVOHH5e7dV6K842DynT8fZ5b5PnFS7q9Zr1KlxTq9U4ceFClOljujz9soyjjvc18I66690m+fiUrLLqNL7G/Vjj+91vLdscjy/ZPLcmpXeYbPXdCjLrtT4ht72jmFSU5S11Ncoz8OXCIMHSze22ZZnkNxTz+lmFTqFWd3Qtb6V1a2dTiae6lpj5oc2PZvfTfwb8s+LehHJfz9zGpcy4n0p47v7uEdz5a6TMvyyz2+u7TKbTqVt1a041Pg8DDrE6eqpOFPt0Rxx5tL7O6ObGrlvRls9Y1fT0ssoxqRl7+jDV+8HF9OVnO+6GNrLf3ssq1P2MMJ/wDK+BriWqnGc/dw/g/RjaS0+MNj84sdHNc2FxQ0/PKlKP8AN+cUp93Thr7zh6f2f/Zo06yuouFFDajiyxxYKMmbcDJTZ4sEeVO+YIuvF1HOoacyqOz3U5ur5xPVfyBqRx0tyjVacl6MtILXDXZrhhAAAABUABVZEvAEAAgBKQBSgAFQAQAlIApQqACqyrKABEgDVN2MmWLBHFnpgym5aOBuBj3KMkmNKVJKrqKUhjZWIFhVYABlStGSVFyAA1QAAACYpAGxaxb1Fq2fo24CtxU0tC6wbkuZhuog2actVOP0or72Gxx7in9HlZQTElJCkpAyRkyya1OTZBr1GnWbdb2mpUBsZXPvNH0W1WcfZ46a8XJSBSOLPHHu2CK4Ls9OTXZqckjPR9J5G/buOo4t2jLUDYqej95wWeYaqEvs8rnJYuNzCHEp+T2QcxsjdcOvZVdfuy+X+74Pq3Np29bZPIMx4PEr21bClU9nlqR8MPl7dL44yOt/VtD+zlpfXGzdz8ddDF3yVbapQto1+aphorTpc316d2BVNqVzd31O24OzFlf0LCn1anf3VTTDTq7Y6ZTjHsbN5V43xbVncWsrmpbY0q0bfTKjSxhLwjKG/Dw9W9pbM0qVxxoUqPDubutQr8T4vjc4Tt9PfUpb90ae/wANeO5s7RW0OP16x6x1C2rctOncW0raxpy5cIxpUt8vm1Sx7WDr9Op/R/pqyDNqPLbZtbytqnNw+aOP0uz1voq3lq/6nzvt9wZZTk+bQ7yvlObUKlT/AIdSXDlj976Ey+U40I658TwaOWp+jZN7XpymzSkJY7qpCnTlOf8Ah/n6nyd8IbaP40z2vRpX3HtqEZcHh1MKmH147vnfSm3mazyvJalalzSj5tMsMNEfXj29nh4YPiHby/q3F/d3dWtCpxamPeUd2ieG/d7PZ2sHGbD20My2htrT2ZS5pSjjo3YfN6+19qbLyrWuW2kPalGPNTjh+y+R+hG2nW23tp0uWVP7X8n2Tlf0IW8qdPdUqS4ePLu8e3w9Xa0fLnStPrW1m1V9R8vW6tOn+rhGH8cHoUoZf8Rf1Zn1xc5badXp5Zw82h/WNLR3nE67S4dLdLw04uk30ONf07ur1Xvr/j6rz8Xlvq8Tn04Y46ezt7Hfswhm3xtU2v69tfn+RVqlSdfKbOnQvrCcfzOrVhppfap4Y4MHiubY3e0W297VuIT6zmN/hDTUqRqafLTjhKUOXH9V916OHaRh7tPCL4k6N8v61tLk9Glb6eJmNGpRpx9iONeM9P1YQjjg+36kgUo8tPR7Mf5vzc2ksJ2eZXtj/u17WpfphUlg/SOOOmnKfmi/PPpKq9Y2z2hrQh3dfNrmrGPr5qspfwB0ipNjpyZ7j0nk0sEVjYt8WzFo05d42o+AMssUxkruJcoMF5jpdTuuavJ2DNKrrlSXeAmKPyiI4khK1STGAAAoABUFQAAAAQAlIApQqAAEgQAlIqClAACqyrKABEgDVNhtUWtHwbtHAGXStKKF94lgkxS8WxLxYqkQYFZLSUkKUl4IFo4MoiPglEvBBErAFUJj4oCJZVUb0tUAAAAJihan6QG/ax7tsb9LFRXBjVuvIzKXEPKDFl8u7lD3W1FpW89N39puRBMmGpJkqS002vKQM9NstOjJuR5aYNas0qkm3dYtOQMlFykYuOouQo+jBjZIyYpS7xamC+9kpzY14pGanJu0cWi2aMwbspta68nJ7rYjHUw3kO4kDi8jq8OnU9rTWfU3wZ6/xhkV3Y8acu7xp80t2nf6nytk+Omvdw+lg9l+DreQt9qPxi4oe1Hgxwx8BT07Y2vpr18suKXEoVaE8vuaHBqVcJ4Rnv08m6XjHxdrzLJLfK8pqUbfquT9b3cS2p2NaVzcacdUIzlvx0R3ui7QVrjKek3Mrfvea5jX5a2NGcsKnq1x8v1u30842kjQqZfcZjlGS0JS08OOZcar+tLfOeP7mDhdrITzDZPNLGHpK1pU4fN7UcOJHd+mL2Ho9voZlsfkubQo81zZUpy5vlj4/e8OrZ3b2d3on/slfRKnz827Hx58MMe3DwwenfB1zOlebA1Ms4vNkt/Xsf1Yy1U/7ksGj1W3Zakmra65U48/7LNWx7vyTkJeQfCKzrquRVLTrFLics+HKjhjhLD5/Xi+Tc+qz6xKlr83u+D1jp82mnmW0tS39BG2qaODw92OrD16u3DF45mE+sVOTWwej/BrsLupthXrUaMJdx5pVP8AW99V3ledvkWacnDlToS5o0/Ny4vmb4N9GdrmXXuSPeRjKMvHd83Y+i88vNWy1zS0VZSqd1y/Sx9f6GjyWzy6+s7/AC/qlvm8q9DvI/Fu7jeX2cZYY9ht7tNcZnlFSjmeyu09K74OMfjC4vq9D7OvRhhCX1Y4OfrWn4XLvclpyjbd38aa+Fvlj2btG7Hfh6+3waHStV1WF7b5ZVyqpldSpRpU61vm1apV3y079VHXp8dW7s8O3H5WDpHR3To2O1my/vVM4owp/XGE8X1/HmeAfB/yG3vtpamZ3dvxPi2jjUttX5KrUx07+316Ht2eX9HL8tqc/ey9HH17wbFTGjWqSt/NpjzPgzposoZf0jbR2ns/GOMo/VLmwfcWy9KfAqXGjTxN3NLxk+N/hKUYU+l/aOHJ3lSlPl/4eGLR5BdR7yTWbl14tVQiLbptSLZt/R/rA2GOpiR8Vano/pA0Mwwhw3WpOw5lLS69JIiK0lUtiUANUAAApLwBAAAAAAIASkBVSgABCUAAJSAKUAAjSjSsApuQyKgqJ3IBtUcG9Tadu24guSxRvJeAlG9SSykgUlgxyiyS8GGXiKQahj3SBYRFKUrCopSwsqAnUgZUrAMBKE7wGW3w7xibFngpTbpry8SngtKIMFSrpa8qzYlgRpwBqavb91yEcWvcaOGWs+7BkuJNeUmzWi0wbFvLU5D7bjrX0jkPYBqXDWbVaLVkDLRb9GXduPp4t6mCamCrKxAt5l4sdNbUDLFt0eZpRbdvikcjGqwX3k0LRkx3k+794HD5fPTmdT2uJT8vzvV+gWtp23tocH0nLT06d+p5DHHh5tQeg9F951XbC05+HKVThx7vf/MU9n6fKHV9rLLMNdWpG/tMaeqpHDzU5fd7TJY7eZZZ7J39jfbWZhxLuhR4PxDk9O06jox7yMZY7sOfljj97f6eLatHYHJ8w4PcW1/6T+zqQxjHs8e3Hc4foxym7zDKtnrixy7KOBXv7mzzO/8AielWuLPhQ10Zzq1ZSjpnq93sYOrbWUep5tbVqVa6r2mY2FHMLetcXHHrVcKsfbnu83zep6N8GPNODt3nWTcbu8wsqWZU4+9Uh3c/4Oi7dQvq2W7NXefZnb3e0cqdehmNGneUq3Cpxx1UtMKfLTju+Q6M8x+IelHYzM58WVOpd1ctqaf7WPJ/eaPsujHTTa+fXMLfKa9WcJ8OnTxlL6t2PrXjPVU93ldb6WrnqvRzndb/AOkn9flx7fvB8XbZX87jNq9WevvamMvN87gadDVp/wAWpkzCfGzKUPpfxc5k+W9YqckNNOMeaWnH7gen9ANndxqaK2uNKpv7yPb9Xa9yzCz4OUx9LGVetHu626X1473QuhXKKNnaUK1W3hKv2Vacqdb1fPh4fe9F22rcOvk9pClpp1uLVqfS3aIx/wAQOvSyy3utVWeWUr2nK7o2cfSR0asOaW+HZhhh87rG1Vpb09l7a0scv6lbXOcSqVu8qTnKpSho183s7neKPFo05X1jPiXdevLiU6mZSoQhCPhyxxjq3uv7cRrXFew6xWq95RlUqUOudYhRl9GWO/xBz/QTZ9XynNK35yvTp/s03MZxeQzLMo29HRXjHy+uH+v0sGxeix2BjcUa3D6zUqVdUuztxx3f8vYjYGw+MMzvcwq0tVtTrfg3E0/Xv7MMMMO35hLu1nR4NpQo+7TfD3wgq07jpc2jrT/OQ/dDDB90VuWm+C+mLGH/AIo7R8Ly1K2FTm+XtiDzW8aspN2+9ppSUK6Wxb4+wwRZaMgZI494VpMcpFTHuwcXm1XzODcvm3nk4hIANiQBqgGMEyxQAAAAAAAIASlUBSgABCUAAAAAAAAAKrMbKLKgRLft4thhoszVJirLFKgI1KElJSAlJXUljBkTvUARLwQCQAEgDYMiqo3VL6ksaY+CUrgNiht2eDUi5C3aNmmtUiiMtKN4MUlKkmWSugGvu1K2/d19DNKi17iHDBt72pUZ9TBUj3gL0/SORp+jcbTb9vMGG4a0mzcNOXiDLbuQpyaVng3QZo+jYKjLRkxVogmMhRcF4+LZoy7xqxbFFlHI05sVxzU0U5amSpj3bB13MuWpSq+7LB23ZO54O0NlV5OWtGTqudQ7tyuT1vQT4WrwB9edKVtcZh0T3+v2aHH9evfT5vv3eLx3o4vMmo5Tnla5zPJbDNo9X+K/jjXO1hGWrizjSw7JVNz2nI81t842XtqNaE6le9tpUKNSVPklvp82Pydj562F+L7faWnb5tPIqFDvaEq2bWNS5pUsY4+zCGOHODuefZ9lOYbL9Uq5nZZ1nFO7pztL2xyPqNKjR7eLS19mvf6ux1jPK13HZ6pd2nLXy2rRvKPD+hLx/RhLF6xtVkmWWux9WeWWOw1haVKMv6xvLOpQubj/AIFHTy/NzYvL8tw65Qlaf73QlS/ajuw1MU+zdg85o7RbJ2Gd2/N1uhTq6Y+EMZYduH1b3UvhBXPD2BvbeHLXqU/N9GOOG/8ARi6d8D3PZ3nRt8Uz9PltfgVPHH6v8m58Ja5nb7H8H0lSt5qkeXy4+G4HyZxf62l7Oqp+57dTy3/y9TvqOuvGnTw7/sw1b+zHleHXXLd1P8T6Y6K7Ojn3R7Qsbu44ce7qej55Rj26d/6Adu6Dba04FefG49Ts0xp/82Dt22E61TaG2/Jxo22PzeMv+zp/RfcdR2lvcu6vx9Xo9NTDm/fv3uw7RVtWdZxV1+Xh0vVvhjow7Gi2T5fl+ZWkuNC3u5U98uHZxnhc/VLVjpxdZvqNG1zKrb29vdUI06eqNG6jHCrv3fJh2acMHacytq1xQqdXzzgU6dG2jQj1qpS4Wn0u/s7McXWM6ucstamcXFj+R1y40qksfLDt7e0G9mWaX2YZFs5lOWa/wm0hVlUp/S34x/S9S2Vy34pyK0tPNKnR7yUvGWPreE/BnuKWdVKcJ3fH+K6EeDq+THw/ji+iafo2JamaT02lTX7r8/tvKvG6SdoYTny+b5480vvff+bY6bSpyan54bbXFat0m51V1zqVJU8fN80mjr+YQ0uPrSb95GftuMrNgiOK9OTFHwW1aabRm3qSxYdaNYNHNp+ZxTczCrqqSaYADIkBVqlQGVIAQAGqAAARIFQAAAAAJIBKQBSgAAAAAFZKp3oAAByVNlYqbJqBZROpUFZYMTJLFUFdydKTeCtSTCtLFVKUiEqUAJAASAAAAvqSqAvR9I5Ci0LfDvG/TUpn3p3oVBMsTUx1JKSmDNKcItG4nxKhWkxgz28u7UqKUZ6an2map6MGKOLdsf8AlaDdy/0n6oF01ZYtm8YremDbt8NLNKSkZd2xVJgy28+/+0y1sGnRnprxn9Ju1MAYIyWijdpqH5QGWOLNTYI+DNTZRu2+C9RhoyZa0e7YOGzjVw2XKZ9xQ+0pmUNVOXOpkc+7/WB9SbD5pfXXRzlvC4tSvxtPEp1NOj6MMMfleaU7yGzPTXbZjfVerWlLNKdevLibuFQq+ft+bCWOLsfR/mPE2IoWNpV0ylXxnL6G71fpdN6ULWdrmVlfUauqVe35amnDknCWPL8+4Hr2zOV5d8a5PnFvd5ltDmmW5xcXHWbHK61z1y2n6KjUrV9NPs+t5zG46jtDd2la3naV7a7n3FSpGWMMNe/CO+OOOG/D5t7mKPSFkdnkXV6VxttnWaXNP8NzGpecLs9qjTlPVwqf2YvO7i5pVL+pVy+x+LbapLVToRuJVtPy4659spY+vEU7/wBCe1/9EeknOLTn6te1pcurdhzY68P4u8/CGzKlnFC2nbz1SoVNVbx3c2GGP6ex885pc1bXPaF9+coxqfrRxd2rZ/PaTKY9brd/GP1MHV8yo6uf+7H6nt3wa9oeDaU8vuPLRrYaeJ4dv0sf4PGbzXKpz/tOd6Pb+3scypde9HKphp1eEf8Au1L6lt7Xq+1ltmdjb29KnVlrrVKcf2sG1eS4l/d1p8tOtcyly+fd+hjyfaC0+KZVvy/B8sY+X/3YrOGY3VeUIWlW5qaubT4Q3+G/Hww34inOSzm3p2nBy67zKnU/PVqPG8Pmljuea9IFerb9G2013r/2K4l3nLrlLe7pdR4fJWrUoyp+k5sMYftYet5x8IKt1forzThd5xZUaXLHHfzTj2A7D8DXKp0djMyzn2bu54dH7NOP+b3+Po3R+hHZ7+jPRdkGU6NNSNpGpW/4k8OJL/E7vH0bEuKz7GcrCUIUeJxI4x/c+AekKHD6WLmHJT9LDl+bt3Pv/PqM62W14QnOhKUfSeuP/u+DOmCMP/E2NxR8vG0Slp9rTzY4/PvaOo5lDTq95wtbGbns0nP9VwV1jp1Ng14zYq1VTWxb2jLGqVJMLJU9HyA4y49Ixstww6gSqACqyrKkAYADYADVAK6gTvVBKQBSgAAESAASkAUoAABEvEEsaZeCEpAAAFKclFdSK4CJJTpBjV3M2hjkkYqkmGU16mLCoTvXixsiUoFJJjIFxA3VJDeMSANwAGAADZtcG9FqW+DbiDKpvN7HKQIqMMmSoxyUpSWCsvBMsVAVbUZ6qbVXo495oBMvBsZf+MMNTBezx/C6YNipHvERZKzFTkDLLFh1LyYQWcjbz4lOM3GN3L5d3o90GWp54sUmS45mKQMjPTYfXFljiDPTXrTYo4oqJGteeSTj8tnpryg37pxlrLTdxUPXOjfMIU6de36xVjxOXl+dvdI1tS/o9bXdHXHq13hS+bTOOP8AOPa6Rs7dTp1OSGricstLvFxb32ZbEZpaaIaaVHGvT1c058PdLHd29nZv8UjqlrlmY3GRXOfUbGfxbbbtV3W7uE5Y48sIfnJ/NgyUbG+qWEr6FpcdUjv7/wBj9XHHxw39nZv+d6DsvdXOcbAWWWZnmfW6maW/U8vsrzqlDjSp+ThS0SqShHHwnjhh2+txGw9Tr3RXtZkda+pdZpU+LWp1KfeUeF8k/XT309Onx3yB0PPMeNb20/dqY/3jKbutb1PtLVqfWMpr/wDDwq/d2uNta3o5g7TRqQlT1/4nK7N1a3X4wpQt5VKkuXl34uu2NaEqf/U7BsreUbfOrac6OqnxI8vvdpg+jMls7jNKFOtWq9WueSdSn4ao4eLt+S0oUdWZ8W9p97GlGVHi446t2rt0dmn6WLhclhb2+zVe7q8KpUp1uHGnT9jV8vrc7srcfgF3d8+qpKWmnGjjhh2e9OGOEt26P/dilshn/XOdVa35CVTVbRqYeO7x+rs+/HteY9IVp/Sy02RyH/5ttHQ4n/CjGpOeP1YOyZbfcPZ7OsxpZTdV6d3xaFS5t9FTC337+2eEsdWEcdXz70bB5dC86Rtl/wD/AB1he3n92nQj/wDyb2j3O3jCNPRCGmPsx91sS8WKmyahLjs4w1WFT2uXy6d74i6erKFvtZ1ujR4calbicSXLOXN8nzPtzNsONQlwoavsy3fvfIPwlLbh5tGrb/leJKpHVHHCOn5PWDyXNv2nXr6DsmZSn+1u/fhvcBeRbBwqjJW5ailPmaFPWzSI4JqejkDir7Fqs916RgZosCpoAMSAAANgEhEmqRqQCUgCooAAAAQlDNAFTEgDVAACoAAMiQBqgAHJx8VtxFYERWTHwRU5QVqS0taU1qkmLUlKJeDHJllgxSipSY4LVERJJSoAC0cUqJjIFgADeDdBKBgkF6PpGwbdHBsRwY7eLPHwaKSYt7YqYMMsAUlJSUlpRYZeAol4MadSAAAbNPvKatv6el9otZ95KHvK0PxuP2gb9bHvPvYdTJcedgBbUpKSVagGps5bPTX0e81GS3nprxmDk6jDJt7mtL0kwRHFeOLEtEGeMlpMSwMNZxnlu4zcnW9pxdx6QHZ8tnpqa/7up6PsbWo3mnLqtHu68akKn63rx/1ueW5fi7xsHmcLPNu+9HKPtRxxw+7BI7b0J386Npe5TmFx+DZXXlw6PxhwKlWUvYpRpxlPxjzY9uHzON2Ns82sdsNo8hsfiW2va/5O+lcU6XC5qnJTnDDGW7D85hh/e7NbKYf+aNqKX9JM1yCnXtOvU+o6u+5o6o8OGO+fLv3drbqUeo7Z7Pde+PbKy4cOHe1qNOwuauvkxq64asZebt1b5ftA69Z5XWo16+WVe7lT4ltU+vDl3fe6TTlw+T3ZYx/Zx3PYNrMqnke2d/Y1qNW27yFzHiVOJPdLDza98tXbhLm3/K8q2ip9X2hzCj7PG1R+qXN/MGazuJ03Y9k63Gzqy5NUadaM6ny6cJYb933Oo0Zzdq2Pnwc2oXGjyyw+r9LaPqWU4U9k6FxRt6tCVzd+WtL1YYfv+VvWuVW9Swy3MIZNe1LulQ4/GjdUoznz1JdtOe/X2Yb/AKnCXmZca0ynrE7elLTKpHq8vZ8NUvk+Z3LvbfJeFd1qVPh2WPVq1G8lU16sNPkxh2b/AC78MezDsSp16nZ1qexl/d0rvT1uvw61DqcJYTly+E49sN+H1fM7L0T21aptnmVXXqp2mV0KVP66tWpjL/8AhwcXdV4WuwNpR9m7v9co6oYY6d/yeO7l+V2HoVhqu9o7v+3oW37NGM93/wCVo9J8qJSRKXdy+i0pXUKlSOifLL/W7xEozaHGtK9Gejhyp4xl6uzHDt8Hyv8ACKyqFvxLjy6u7pxpx304+zjzfL+99QZlWhU7nXPVUjj/AK3vn74Qlhd3FpU4Nx8kuD4eYHzdWnOVpT/R/Dd/Jw95FzWicaGifmjy/suJvGwcLcU+8Yo+LbuItVob0VKvdolgpUpA466nqYWe6p8NgSkAAAAAAQClCqyrKkAYACooAAABEgVZiQBqgAFRbSqAAzUgBAAaoABypJaKJArr0qSlqWl4scgRJjkmXiRwAj4okyeVrVJakpTqVRqSAAAACYyWUTGQLAAAAM1uwtm3UpuU14qfk00xK29EsUSQClRrywZ5MchTAJkqzUp3qC25qlreXeRZI+nj9pgp8tRtR/G4/awBt3HpGCXgzXH+bXlIBWosrUkJVpsikZLSFOWoz1UIz+iwVpIsZ9x9lNb0YKRXjJjj4LgyxxXYYsmoGKtJxl16RydxJxt4Dl8rqfgkXK5bc9Xu6daFadNwWUz/AAT7Lc4oO57N53C12stMw5OHHiWdbuZVe7qR3S5YY4S3/Jux3u49JmNxWymyzafxlbVOv1uHbX1nhaVKuNSOE5VqcdWMtOGmMPm7NzyLKbng3FSf5nh1+7lpx5Jdu7H6nuHSR+HZFc/F+SZ1T4dTC6ubmnY06FtOnyyp8Spv1VdMZYx7PXjvSKdLUutZ7lOc/wDzDLIS5qct/ljLDVLwljzer9LyPbaj/XVC4/P28f7vK9NzSraXnRPkGbQo6r+yu+o3Nflw8N+iPZhqluhu9e50fa6h1i0tJ/mqlSP6JYbwdYs/SaHZtn6Pfx59XNhyuEo0u8i7z0b21vLOqELj0XE1S/QD0nPLy4+NstyylSpaq1pR/wDy46f3fI9Q2orX19aXuWQrWXDoXOn8DzSpjPzYR56OOHq0+X1PLM0zixuOkK5/FeHRqUbb2o0p6cO3y78dOOr1YPScwo5ZlNS2t7G79PulUr1K2OujhzcvDlhhjjHD3mKZ82ynTkWydp1urU005cf812b/ANGE98vVi7Z0Gyh8RZ7V97OriP7GFOn/AMjq2fZjb1s2yulaXEK3DtKneR3S8JacNMo9nz4duO5zfRrf2mS9Fdtm1xOf9Y1rjMOXt9LVnUw+rkxaOxdI21Fvs/kVe7n72EY6d3Njj4/ueZdF+013mF3Uhdz+Xg6v+p0jbram7zy763WuIdU1dzT4emf62GOPa53oN41bPZThr4fE9J6v+zB7lZyrSpy932q2rdhD7P8AN5T8Iand/wBHq+ijcd5ujUqR3Sp6Y7vNj6vme307WEqcdH+To3Tdl9G86Pc0o973lP8AI1NPral8OSl3FT/iScTWclLl48PNwqmMeVxd02DSuvFptutJryw0tERiSiJqSBxuZey0W5fYtNKQAARvG4ADVAKpAASAAAKUAAIklXUCAAAAAAFVlQAEpAGwAGqAActqVlJXUM1KJYsW9aWKpoLq72OU2Cak2CXitrUAAATqQAsKgLCqdQLRksomILAqCzdotKn6RvU1KZyLHKS2oEympvV1KyklKd6ssVZYqalKStHBj3p1MwZdMGOSNaksTUo1Nr/a6X2sGm2qPNd0/tMG7W/za8meowSUoY5eKzHLwBMVt7GA3LH2m5u1NC3lpqRciDBHxW3Il6RIEWSPgxLRxBSt7Tj7hyFTFx914Ay5bPu5QbkpuMsZd43qMQZ8tl+Fx43lqRlTl+tg9a2b2dznbbLY55fZnO9tMvto0JWljTlK6hwuWnCMJd3jv9c3k9Gl/iwevdFFxcXlhd5Dlt1ZfGnXeL1fNKNS5pdW095op4Y6MJ6vNL5EjY2Tu7St0c5ls9cXcPjK7qVuHactOpSrR0Yx07/YxwjLVLGWG7S6XmmPGyWp9HTU/l/Pf/rs7/sPRt7XpR2hyn4puLDLbmjWp9WrU5U6lGlq1Q8uOqMcebdu34eGGPY6NeW3V6l7l1bl4FSrbSj7unw7cAdfoz01HY8pzLqfovZ5vn3urW93Cn7Hst63u9VP3Qd96L8wu6m31pfW/V6lShVq3VbrFTGnT4VOnjrljPDDHHDdHHsx3Y9r1K8uOsf0eyzJru4zjK7mtWr2mY3F51urWljKMatLnhCUNPrjjh2/W8Y6Cbi3lthTrXebfFvAoTnRqdajb65SlGnp1ywlHwlKWnHDt8Hs+vidKGy/xdd8ehT3dzRuKdSjR7ypywxt8MIx4kYxlj2e12inYtqqtK123ubeFHgW1taYSp0/LSjvjOU9Hzbo+P6Hg0elPMZbH5PkM76cvi+MqUadHyTwxlyavl3YPYOkbMeDX2zzng8Pq1pVpadXk7ny/oxnpfJ+T2863Do+12A9P2fnnm1GbdXow7z0n2Y/O+rujHYiGR5bTh5qlTdVlKXb26f4OP8Ag87GZZlux9pd9XhUu61PVWqfSx9T1y4hCjacnd6fa+ZiU29Lhw5+blcJtdaQuspu6M5+kp46eXf2bnMWNfjVPo+80dqqnDymvOdHiU+HzRj5zR+eOcUur7S5tbz9mtjp9XrcHcRc5tJP/wA55t5+8r1dP0dMnBXjRo1tDVqSbFRqVpKCMypLu2LUiUgal1Jqtq6i1RIgEqAFACqQAEgAAClAAAKyxZqUykqDVAAAAAAKgM1IAwABQAoAAckqyI0sxKm5EkyYKlVgVMWDUtKWpUBenFWODKClSKi9SSgAAAAAAC0VVgSISDJRbtNqUYtqLYpdMsELSxaKMcvFfUpLFKWKSq6dylKxwRWXYZYs1KN6AYDZtfxuk1mxZ+niDdqMMmSXixqUqxy8F2NmpTHwXjFSPgyxYL08HIUcO71tGPi3bWfcfZUoqRY2es1dYLsaJSRqBFSWlqVGzWk1aglFn+MOWtcNPO4i3x4deLlqNUU5Cjhq/wCl3Do3rcTPbnKZ28K9pm1lKFz+FStpwwpd5qwqQjKXseXd2ujRuoU2zlec3drf0ruxu6ttd23NRrU/PD1fV60j2LaiV9sr0jbPZ5SuKXUuHTsafd1dEIUtMJRnjLnq9lXVrw3avmde6TqNaz2+zLuo0+s8O700/R75Yc2jfj2x3+trZ5lWbVNl73Ptp8267mlCtQ4dH4w6z3EvScTCOrh+z7WDmumCj3mT5nVsbSw7nq0qNGpGWHD3YSjjHdj5Obsx7N4PHsyq9XzK5o+7U5WpLMZx8ntcre2gofh8av5yn+/Bxdaj3ah3rolyf4+zKrY8HN5cOnhOPxfY4XOnHV7eqUdPzPofozye0tekKvY5dlNK5tMlsqFO59+Vfhel0QnjhKWM/GOr9/h4l8HOlcfG13dwub22tqHDlXlb8KrhPCPNpxt59tbHf4afvek9HMNnrzanaXr3Fyu2qVKlS2qdYnY1qUoz8ujf9qWMd/1JHLdMFbg7Cbb33PqrVp0u8qeviRh/yvIehfIK2ebZ5bYwnw+JWjqqSjq7I+r7nfemq709E9lR8sru9o/3d8v3uX+B3kfXNqL3NtH4pR00/rl/MH1pktpC1tI0YeWMcNPqcbtleVre00Q5Y1PykfH7nP048Om4jaKjC4oeT+8YMOyN51qw16/o8P3dzHt1cwp5Fd6591wZe1j8jjMhzKjY15Uqs+WpLH697D0rXPD2PvdGiPEp+b1/oYPhnPoTrZ7c1reE5RlKUuXm8PHHwcDmUX0p0V9GPx9XzTNszo/g3VqtK25vXKOL5szKHDqVKM/NTqSj9yoOIqNWo26jFoaNXcyaFtGkqA0rqPdtBvXEu7k0NQJAABVIACQAABsUANBEpG9VmpAGAApQAAAAqsqAAlIA2AA1QAAADl9ytRGtgrVgVrSYJJ3iRQW3JjEStRivJNPBWsDFJUAAAAAAAFlVgEoTEGei2YtenFniC2pVKG6DGyI0sUoiUlpeDBUmoTKaiskpSkTHwQ3FDNa+k/VYWW39IYNtSSyjRWSi9TFiikXZYsTIoZY4tqzl5oNOLNby7+IN6s0JY6W1Um0KglfUrrU3kZAyVMWtUZqjDIGL225xmlUXBlqVpyTYz4d3H6XLL9KkYskaIp7fsbd2OedG13kdallGW2lC24tapRuKlOeuHlnUjGnjHtx9Wrtdbo1dnrrYSU+qQtM/tKkYaqfGqTuMPpYY744b+f5PL92Torz24y+hmmXW933lbRXtrKpddWp1pxx3SlxN2/Xhh4R3ud2bp0cv6Rs0ynL769tvjG07mpRqS4nFx0zlCEt3eduuOr96R57LvNLgc2x80PpOw5tRuLO/vbSty1KFacZeHjhL5ux1nNpd5rUO89DvWI3fGo9XjQ434Xxsvlccaj7UI6cMd2O76vl3vT+h+Fv8W7XZzS6l1an6GnmFPjQ4WGuppqU9WHjyRwn244PG9iafcU7irb1aEadOc+sxzDq3h8m7tl9T3DojhO36IM6rf/Mq0aHpt05x1aNUvHGXnxjp3fWkcH03XPE2a2atJ/lLmpX0+5HT/J9FfBX2f+Kejm2rTpaa97U6zLV7W/wfOfS1Z3F9tvs5s9D03A4X/wBypufbOzOWQyvJbSxh+QoRp/dhgDlZNa8hqp+SEpeyzyx+gx3EoS5Jg6NWy+rRzapWrf8A4/a7flc7GjY5tTjC+owueH7Mo9m/+DDmVPVTlR+ly/Kpl9fTX0T4UuXDierCP/f5RTkre1scroSo2lvSoUOzu6fLg/PTpGt+p7b5/R5O7zGt5ftYvr/pg6TbHZ/LbmFG44dfh93q+Xd2PinOs0rZxd3OZ3HNXua0p1PrxxbEuHqekUl4LVGGpJoipJgrTTUkxS8Aa1aXmajZuJNYFlQZqQBgAAAAAiUgTJCo3RVYGAApQAAAACoADNSAMABSgAAAAAG9UkwVGSUtSkgYwGalaK+5SLIwZItepJkY6gMYAAAAAAACyqwC1NVejEGzTZ2KngyxUpVDJuRuSlREsSpLS1qkwWqTYdSVVKF6akWaMdKUoqKSWqKqUiLYt2s2rL2gZlF5MQlEkRwJLChZVO8F960Z6akWLeulLdlPU1pMtHmVqcqhgiKxAW3scpMjFIGOovT9lSotR9GDZpt23pNW3xclR98U5LZ27pZPnWW5jWrVadCjWwjWqU/GFOXZjj+jxdv2wo3Fj8V7U0vjL8Z4VGtm11hUqXFPxhOMNGGiG75cXUsrs4XlTq8+WMo+b3d/h+92vZW9pXGxeeZNnmZ99S7inSvM00977FTtjjpjHD5+1I1elTLp2O1HWODw6GZUcLmnGW/D/F/r5nm+bezD63cc62lu84yKwyy7o8TqEeHQrRlycPf6obt3b68fW6hnkO/jP3lDm8j0W+TV9cKtTi0fLTlGpD9bCXle27F7VWkuivLdk6VX8Jp3ca/ecTicTXv8d2mMPql+h82W/nfQfRzshmdS0tM2rdVp2nVsLz8Yw8mM9EfVu1Y4+pI770d5PPaL4SdS4n6PJbCjX82rvPZ/fJ9V056fYeI/BtsIdb2w2h/33NurUZcP2aUcIf4ntdGGnz6JAyyn3fI4nMrjg0465+1+5yVbRH/9u10LarPrSzp1Ot3cI06dTGn5u2e75GaNTaTanLsr/GLulTjxNMebfqwxea9IHSRPKaFedjWpd3u4dTxx7f44fodA2423hmGe3NW3o/gUZcsZS7d+DyvbTO/jKvrnrjGLRx+3W019n2ZVMwzCtxPacHlNxxqFT/iOMvq/GqNjI595Xh725Q3KzXlJs1mrIFJKSwZESBo3WDWblxPu2mlIAAAALKtgspJGpDAAAAAAAAUoAAAAVBKQAAAABSgAAAAAG0rJO9UESwVXRJKUrRxU1I3gysckb0ArIVAWFQFhUBYVAZBjAZGWiwNmmDZpxZFYolJSl0Skx6mCpNKVbiowkgBKF4xBangzKU1qku7BgqSUJADcsPRyabes/wAU/WBaTHJkkxSUKrb1UClpIQAmLJvUineJbVnimtLu2KjLSzyiDS3o1FSPeIBbepKSUClZMlv5GOotb4iW3Rj3jkLWbRp4tu3wFOdyepw7uhPzczY6Qso4fVM7t4dxX7qtL+0w/wCzDksOJd04Q83svW5ZJ8cbLysbijb95ulw/pR7Y/fu3Y/MkeN7J2dpmGZdRu+sd5RlUo8Ps1y3cu/fh5cWttBYUZX/AFS3n3HEwlTl9GWD69zix2TzzIrK3y6HUr2pQ4uV3Nray129Td5dUcPLLy4xfM/SRS4eZW1XhT5dUOJw+HhV046o/Pvwwlp/VB1yjs9SrWF3O318ehR4v28I+Z9H7B40aOxFzcUu7oabK27yOHN6Sr5o4YerGPqfPFOvb2tpc1eLPi1KfCoR4m7XqeubHzt/6CU8x43Au+enWo8aVSc9NLRhLT4YA+o+gWz6v0ZZPyTjUu+Ld1NX9pUnL+G53qOOmpo436ulxOztp8V7PZXaUYaY21pRocPw8sMMGzWuLiNxyaOHH+bBr55mU7OhXqzo1eHT/KRlhjqfH3Txt/fZhtRWsaUKVC2oebTLVjPH5/kfQ3S5n1HKdnqnfdSryl3lbxwh8mr6/mfDO0F/cZhnVe4uK3ElxMdMmwbd5mNaXEra/Sb3V82ueI3LqtppuIuJalDVbOVz03cWPhOVyewnWrx0Am4k1pYtu4w830ZNOQIYK02Wo1qgMFRiXqKJSAAsqrqQCyoAAAAAAAAKUAAAAKglIAAAAAAApQAAAAADOAlIoSkACJeKgJl4G9CASAAAAAAAAAC9Nt0cGrRbcQZZBFWShSTDLwX3sdSSRjABMWSPgRwWj4gtFSsysFQGMAByFvH8Ei49yMcO7iCJSYZLyxY5KEKrIl4ikLKrJSlaKi0VKZmeMu7azLRl5oCWGpgxtutFpykAG8FKyLf0itRWjLvBLkKbkLNxsZNu1qaagOxZD+P0+f2nseU3MJdW6xrjT8vLL7ni+U1tN3T+15nqezd3qp6NEKko+WUfZxS6Ox3nSdd9Ge0tSxrZZO7ye73XVlTp1ue3n7cfs7+3c8i2gqTzTJfjO3t6X4TUnc3OmtxJ2+PEx/Z34T8Pmdz6eoUr7Z6wzCloqSoVtMqmnzasO397yu3zK7t8pqZdyStKtTXKMt/yaf8AIS4Cn3Obc/5z2n0F0c0KV9s9s5b29GHEua8KVeUfysqtePj6/K+fMyw03f2n0f8ABrtYXGZbK0fevZV5f+lTnP8A6W0fYOYS42qH0vM46tWhY07nnn6PVH19uH7mTMLrVT0dbhT4nl7vyvLdvtpp29O9tK2Yaoxp95p7MNXqw/z+dg8v+EltbSutVj+V1fnueHZ6/U+cqk3Ztvs5nnGdVLidXU6lUmoUrTmx8GcmajzOWyux41T6IMWV5HVuOef7Xqd12fyjq9PXo/abmR5bOjT4MObVv/8AdzVrTo936WWn6PIzR5Jn1Pg5lc0vpfxcVJ2jpChCOey0eWpTwdVliwUqSa8pL1MWGpJQxVFUyY0pTqQAAAAAAAADYADVAAAACoJSAAAAAAAKUAAAAAAAAzyUlIEpAUliBvQACAUoShMWUAGJAAAAAAZaLbpta3w5G1HwBKlSSZSYZYqESxUklRIJijcyRiCy0YpWBWpJglitUkxgAAmLkZNC3j3kW5LEFJMUsV6klVCuoAULKjIlZkpscWWPgVS6Kc9NdLERLZuPGTRk2teqm1WASI4qyBCqyoNqMmzRakZNm3kDm8tx7yMPK9P2buIcDg8kqnZU/WweX2OjlejbO1u40UfNH6m1TmukafWNiL3uoR5Yy4fuY6njVTB67ttWuKmydzxdHeywj6N5PWh3mj2iDic2h3dOfu74vqT4JtH+vcp/+kyevX1e5KpKnTj/AMz5kzSl+CS+i+r/AIJdv/WWbT/3bLLK283vaqkv4lHt21Wb2mX5bWnPhejl5vafIXSVtr8adzCjCnQ5o6fm9T2jpw2kpWNpcwpXEKdTTjS4fEwx04S9p8k3l1VrVPznNiwat1V1NSNLieRu29lVuq8Yey7DleQTp1PJq4cubl3qHDZfl9Wp7DuWR5PPh0uNy/ZbFrk9aNP0XA4kvK7js/ltvHTSq81SO6SROX21bqkatLm4Xd6otq8sqtrw61Glpp+bS563o3EaHdfg3ux7MdePrcRm1K46prnrp+zH5f8AW9inj/SdCcqltd/nN7otZ3zpCq6reMNerTL9LodZUS1pSYpYslRhqNGKXigEpAAAAAGwAGqAAAAAVAASkAAAAAAAUoAAAAAAAAABkES8VEpJYgAIBSgAAABKEsoAvpYlQAAAGzTZdTHFUFpYseo0o0AgW4RpBEWVSm2KcO80AompJeMGOooYZKskoKSpJECNM4pBns/SNioxWfo5MkeaGsGGSq1SKqlAAAaVo05gqzx8GPQvGQLMEvFkqctOM2OUAXpy7tjkRTLxSlDHUZFKnpAVQeVGoGeLZoyalHmZ6cu8BzWX1dOl6Ds3Kcaeufm/zec2Xo3a8jua0eSfeU/dFO5bQQncZLKHJ6SOmn9Xi6DmFtqv6UIc3Ej7Pb5XeK15CjkVzR9qVPHh827t9TzG1zjO7GvQ0X3A4EZRp1NOHLq36vV69QLVodYp8H2qm6Mf2n1P8FOtqyLazM4flb/hU/swg+WNn8y413c9bhSqd1KNPVTwx0S+X1PqL4Ote3yXoyqZdP8AGeerKUfyureDpfT9f2nX5UdHfy4f1bnjFG31V/J7X8Xo/TbY5n8VXOd6e8jWjy6fyfl8XS+i7HDaDMqlpdXE6dSnpqR4dPk0YefV8svDcDuezOz+qnGejTq3adTslxl1vb977MfScOPmcrk8KNO0jRnPTp3xl9rBsSucurVLm3hxY0KVDGXLu3cuHbhj68WKdfsaNxU1VZ2nd6uWUvkc3ltnOV/HXzU9Orh+HZ9a1TLbi3tLatolLjUY1eb6UMJbmbKbyfW6flj7OqUgclcUYSp21GFv6Hy+OGnCXy/K6jtRcabSt+Ly9nVH2d3yYOd2qzi0sanWOt1a/WY4x83k3eDzfbK7nWtNcLvV/wB8Aee7SX8K1SpDXqjxOX/2cBUZs0lPrctDBUjPhrS1ajDJvWtlVre4xXVhcU6cpz9mWlI0RmuLatR0zn+Ua4LANiQBqgAAAAAARvQypTLwQDAAAAAAABAJQClG9KAEgAAAAAAAbxACQQlIApQAAAAACYs+5hgziWGWAtUj3ikvAFU70ApljMjNiSDLTmyRxa8MGWpypSvUmxSkpLFG8F6OPeR+027PH8P+9pRxbmWy/C5fZxBmrNeXi2KzXl4qUhVk0MVQEVJsO9MvBVKWzRn3dRt2cdVp/wCpi46M/M5C0/EP1sQY6jGy1mJSkS8Fd67HLAGWniy62GOCutKWWUlNSutEpAtcY9xH9LaqQ7un9lpSlqpuRuI+X7INRVeSihEvBjl54ryYJYimzWp8kmtHByNT0etpSj3gMkcWzRh5WCWDaoiXIWMXP5TPS4OzcxYzSpz11W1UHVs2ow5nN69VNxGac1MHB5XRnRr66L2vYHNrinaU+DOer9276njVjKf7L0fYm4nR09XhP6RR6BtBbwzjZO/y/ROXFo1Zavfx08vZ9eDwbZOjOxr64TnRqe9F7/ZyqysOec6lPt08vlweGU+7r1P+Jj/EHe6ed1o2Hpp6tTl9kb2d5luce1KpHCl8+qWOEf54vOal5+CSg7z0J/hl/YWn+951bUv0RlxMf3RB9A7aZLp02/VNXAp4Qjpqe7HT/J5FtJ1TL7iM6NGrT4cu+lLVo3/Ju/m9820u4WtOpPR5v9dj4+6XNp76tnt/adY5eJ5dXl/exTU2g2m+MMy7n0erl9TQvsynUp6NbqdO7nxJTre1zNujW43I1KLrDVUWs7TifRb9vl05VP8Aqc/lOVQ9vm+iDSy/KtVDrFGj/Zr3WWd/Uo8KMvpS/k7jluVauTg6Yy9rwhvxZLjKdNpwbitw5R9mPj97B5ht1a1adpQ5PRydOej7bW/Ey2759XD06XnDQAUAALCoCwrvGVKd6AYAAAAAAAAAACEilIE7gEJAAAAAAAAAEAAAAAAAAAACYoBej44thipxZRJpUqRSrJIpLBWWCZKgLRwVZQWjFgqS1LymxigBQNzLfSS+w02zYe0DclJgZZKb0pKktLWkvUx1KSBhF5eKgIcnafiMf0uMk5C39BFSioxywZKim9KVRZUUrKbGrUWEgKyxBMfFylZxVPzxclLEGCpFRlkpIFWCUGdWopTZse8oaPdK1Hu9auW46a8oN26h3cgaMo92z0WGOPds9vzUwb9u5G3n5XG27ep4pHLU62mm42+x1MsptS4qKGlRnCNSUJ+y7vsnc8PTB59L8b1u57I44+l1Mo9Js5fgFSc6vNGnjp8cP/d5XeQnTqcb85J6HYVo1bepvnOUoxxdLze23U6lvHmlS3b2QcTKOp6j8GmGrbPZe30f7Xd3X/26W7D9+95vnVpUyu+r293jhGVPT5e3xjhL+GL074LPedKFtD/c8ol99THV/wA6h7R03Z7Sy20lRnrly46e78svlfE+01z1rOrur7Vb+92vqT4RGcVrO0qw83EqVI/3XzFG3lcXfj/rBI1styqrdVHdMt2b006eul5o+Zy2w+S8S0jVno5Yu9RsaPV+rxj8jNHTrfJdNPn0fRp6e1ymV2ULXTOFLml7zcpW1zVu+sSlGjwt8eX5uxudVjLh4TxwlKFTCGrfj6hTYpwhKnUuJ/i1PzR4fyuMvLa3p6u+1U/ycYxx9f8AHc7Vd0a8LbHDDHCOE/Jj9XzOr7Q1cKWFXHCtcRw4fm1evH5geY7bVqMaFejDzaXm7sm217jLNalJ1tqUiBQnegAAAAASIEpSAAAAAAAAApQAAAAAAAAAACASb0AP/9k=" alt="Tushar Upadhyay"/>
+        <div class="online-badge"><span style="width:6px;height:6px;border-radius:50%;background:#fff;display:inline-block"></span>Available</div>
+      </div>
+      <div class="name">Tushar Upadhyay</div>
+      <div class="username">@tusharupadhyaydelhi</div>
+      <div class="bio">Data Analyst with integrated Data Science skills. Turning complex datasets into actionable insights.</div>
+      <a href="https://www.linkedin.com/in/tusharupadhyaydelhi/" target="_blank" class="btn-connect">Connect on LinkedIn</a>
+
+      <div class="profile-meta">
+        <div class="meta-item">
+          <svg height="16" viewBox="0 0 16 16" width="16" fill="currentColor"><path d="M1.5 14.25c0 .138.112.25.25.25H4v-1.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 .75.75v1.25h2.25a.25.25 0 0 0 .25-.25V1.75a.25.25 0 0 0-.25-.25h-8.5a.25.25 0 0 0-.25.25v12.5z"/></svg>
+          <span>Newton AI · OJT <span style="color:#3fb950;font-size:10px">● Current</span></span>
+        </div>
+        <div class="meta-item">
+          <svg height="16" viewBox="0 0 16 16" width="16" fill="currentColor"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM5.78 8.75a9.64 9.64 0 0 0 1.363 4.177c.255.426.542.832.857 1.215.245-.296.551-.705.857-1.215A9.64 9.64 0 0 0 10.22 8.75H5.78zm4.44-1.5H5.78a9.64 9.64 0 0 0-1.363-4.177c-.255-.426-.542-.832-.857-1.215-.245.296-.551.705-.857 1.215A9.64 9.64 0 0 0 4.78 7.25h5.44z"/></svg>
+          <a href="https://www.linkedin.com/in/tusharupadhyaydelhi/" target="_blank">linkedin.com/in/tusharupadhyaydelhi</a>
+        </div>
+        <div class="meta-item">
+          <svg height="16" viewBox="0 0 16 16" width="16" fill="currentColor"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+          <span>Delhi, India</span>
+        </div>
+      </div>
+
+      <!-- SKILLS -->
+      <div class="sidebar-section">
+        <div class="sidebar-title">Skills</div>
+        <div>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">Excel</span>
+          <span class="skill-tag">Power BI</span>
+          <span class="skill-tag">Machine Learning</span>
+          <span class="skill-tag">Generative AI</span>
+          <span class="skill-tag">EDA</span>
+          <span class="skill-tag">Data Visualization</span>
+          <span class="skill-tag">Predictive Modeling</span>
+          <span class="skill-tag">Data Cleaning</span>
+        </div>
+      </div>
+
+      <!-- EDUCATION MINI -->
+      <div class="sidebar-section">
+        <div class="sidebar-title">Education</div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div>
+            <div style="font-size:13px;font-weight:500;color:var(--text)">Data Science &amp; Gen AI</div>
+            <div style="font-size:12px;color:var(--muted)">Boston Institute of Analytics</div>
+          </div>
+          <div>
+            <div style="font-size:13px;font-weight:500;color:var(--text)">O Level · NIELIT</div>
+            <div style="font-size:12px;color:var(--muted)">National Institute of Electronics &amp; IT</div>
+          </div>
+          <div>
+            <div style="font-size:13px;font-weight:500;color:var(--text)">B.Com</div>
+            <div style="font-size:12px;color:var(--muted)">IGNOU</div>
+          </div>
+          <div>
+            <div style="font-size:13px;font-weight:500;color:var(--text)">Class XII · Commerce Stream</div>
+            <div style="font-size:12px;color:var(--accent)">Heera Public School</div>
+            <div style="font-size:11px;color:var(--muted)">Samalkha, Haryana</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VOLUNTEERING MINI -->
+      <div class="sidebar-section">
+        <div class="sidebar-title">Volunteering</div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div>
+            <div style="font-size:13px;font-weight:500;color:var(--text)">Volunteer</div>
+            <div style="font-size:12px;color:var(--accent)">National Book Fair</div>
+            <div style="font-size:11px;color:var(--muted)">Ministry of Education, India</div>
+          </div>
+          <div>
+            <div style="font-size:13px;font-weight:500;color:var(--text)">Social Media Promoter</div>
+            <div style="font-size:12px;color:var(--accent)">Pehchaan The Street School</div>
+            <div style="font-size:11px;color:var(--muted)">NGO · Delhi</div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- CONTACT IN SIDEBAR -->
+      <div class="sidebar-section">
+        <div class="sidebar-title">📬 Get In Touch</div>
+        <p style="font-size:12px;color:var(--muted);margin-bottom:12px;line-height:1.6">Actively looking for <strong style="color:var(--text)">Data Analyst</strong> roles. Open to collaborations and projects.</p>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <a href="https://www.linkedin.com/in/tusharupadhyaydelhi/" target="_blank" class="contact-btn" style="width:100%;justify-content:flex-start">
+            <svg height="15" width="15" viewBox="0 0 24 24" fill="#0a66c2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://mail.google.com/mail/?view=cm&to=corporatetushar24@gmail.com" target="_blank" class="contact-btn" style="width:100%;justify-content:flex-start">
+            <svg height="15" width="15" viewBox="0 0 16 16" fill="#8b949e"><path d="M1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25v-8.5C0 2.784.784 2 1.75 2zM1.5 12.251c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V5.809L8.38 8.966a.75.75 0 0 1-.76 0L1.5 5.809v6.442zm13-8.181v-.32a.25.25 0 0 0-.25-.25H1.75a.25.25 0 0 0-.25.25v.32L8 7.909l6.5-3.839z"/></svg>
+            <span class="__cf_email__" data-cfemail="2c4f435e5c435e4d584958595f444d5e1e186c4b414d4540024f4341">[email&#160;protected]</span>
+          </a>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+      <!-- README -->
+      <div class="readme-box">
+        <div class="readme-header">
+          <svg height="14" viewBox="0 0 16 16" width="14" fill="currentColor"><path d="M0 1.75A.75.75 0 0 1 .75 1h4.253c1.227 0 2.317.59 3 1.501A3.744 3.744 0 0 1 11.006 1h4.245a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.507a2.25 2.25 0 0 0-1.591.659l-.622.621a.75.75 0 0 1-1.06 0l-.622-.621A2.25 2.25 0 0 0 5.258 13H.75a.75.75 0 0 1-.75-.75V1.75z"/></svg>
+          tusharupadhyaydelhi / README.md
+        </div>
+        <div class="readme-body">
+          <h2>👋 Hi, I'm Tushar Upadhyay</h2>
+          <p>A <strong>Data Analyst</strong> based in Delhi, India, with integrated Data Science skills. I specialize in turning complex, messy datasets into clear, actionable business insights using Python, SQL, Excel, and Power BI.</p>
+
+          <h2>🔧 What I do</h2>
+          <ul>
+            <li><strong>Data Cleaning &amp; EDA</strong> — Structuring raw data and uncovering hidden patterns</li>
+            <li><strong>Visualization</strong> — Power BI dashboards and Python charts that tell a story</li>
+            <li><strong>Predictive Modeling</strong> — Machine learning models for business forecasting</li>
+            <li><strong>Generative AI</strong> — Leveraging Gen AI tools in analytical workflows</li>
+          </ul>
+
+          <h2>📊 Tech Stack</h2>
+          <p>
+            <code>Python</code> <code>SQL</code> <code>Excel</code> <code>Power BI</code>
+            <code>Scikit-learn</code> <code>Pandas</code> <code>Matplotlib</code> <code>Gen AI</code>
+          </p>
+
+          <h2>🎯 Currently</h2>
+          <p>Actively seeking <strong>Data Analyst</strong> roles. Open to full-time and internship opportunities.</p>
+        </div>
+      </div>
+
+      <!-- EXPERIENCE -->
+      <div class="section-header"><span class="section-label">💼 Work Experience</span></div>
+      <div class="exp-list">
+
+        <!-- Newton AI - Current -->
+        <div class="exp-item">
+          <div class="exp-avatar">🤖</div>
+          <div class="exp-body">
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+              <div class="exp-title">On Job Trainee</div>
+              <span style="background:#0a2010;border:1px solid #2ea04350;color:#3fb950;border-radius:100px;padding:2px 9px;font-size:11px;font-weight:600">● Currently Working</span>
+            </div>
+            <div class="exp-company">Newton AI</div>
+            <div class="exp-date">On Job Training · Present</div>
+            <div class="exp-desc">Currently undergoing on-the-job training at Newton AI, gaining hands-on exposure to real-world AI and data-driven workflows. Working on applied projects involving data analysis, machine learning concepts, and AI-assisted decision making.</div>
+            <div class="exp-tags">
+              <span class="exp-tag">Artificial Intelligence</span>
+              <span class="exp-tag">Machine Learning</span>
+              <span class="exp-tag">Data Analysis</span>
+              <span class="exp-tag">Python</span>
+              <span class="exp-tag">On Job Training</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-avatar">🏢</div>
+          <div class="exp-body">
+            <div class="exp-title">Data Analyst Intern</div>
+            <div class="exp-company">SkillFied Mentor</div>
+            <div class="exp-date">Internship · Delhi, India</div>
+            <div class="exp-desc">Worked with complex real-world datasets to deliver actionable business insights. Applied data cleaning, exploratory data analysis, and interactive visualization techniques. Developed predictive models and translated findings into clear recommendations for stakeholders.</div>
+            <div class="exp-tags">
+              <span class="exp-tag">Python</span>
+              <span class="exp-tag">EDA</span>
+              <span class="exp-tag">Data Visualization</span>
+              <span class="exp-tag">SQL</span>
+              <span class="exp-tag">Power BI</span>
+              <span class="exp-tag">Predictive Modeling</span>
+            </div>
+            <div style="margin-top:10px">
+              <a href="https://raw.githubusercontent.com/tusharcodez/Certifications/refs/heads/main/intern%20certificate.PNG" class="cert-link-btn" target="_blank">
+                <svg height="12" viewBox="0 0 16 16" width="12" fill="currentColor"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"/></svg> View Internship Certificate
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SKILL BARS -->
+      <div class="section-header" style="margin-top:4px"><span class="section-label">🛠️ Skills &amp; Tools</span></div>
+      <style>
+        .acc-wrap{display:flex;flex-direction:column;gap:6px;margin-bottom:24px}
+        .acc-item{border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--surface)}
+        .acc-header{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;cursor:pointer;user-select:none;transition:background .15s}
+        .acc-header:hover{background:#252830}
+        .acc-left{display:flex;align-items:center;gap:10px}
+        .acc-icon{font-size:15px}
+        .acc-label{font-size:13px;font-weight:600;color:var(--text)}
+        .acc-count{font-size:11px;background:#252830;border:1px solid var(--border);border-radius:100px;padding:1px 8px;color:var(--muted)}
+        .acc-arrow{color:var(--muted);font-size:11px;transition:transform .2s;display:inline-block}
+        .acc-arrow.open{transform:rotate(180deg)}
+        .acc-body{display:none;padding:10px 14px 14px;border-top:1px solid var(--border-light)}
+        .acc-body.open{display:flex;flex-wrap:wrap;gap:6px}
+        .cozy-tag{font-size:11px;padding:3px 10px;border-radius:20px;font-weight:500;border:1px solid;backdrop-filter:blur(2px)}
+        .ct-py{background:#0d2040;border-color:#1e4a7a40;color:#79c0ff}
+        .ct-da{background:#0a2010;border-color:#2ea04340;color:#56d364}
+        .ct-ml{background:#1a0f30;border-color:#6e40c940;color:#bc8cff}
+        .ct-bi{background:#201200;border-color:#f7816640;color:#ffa657}
+        .ct-sq{background:#1c1800;border-color:#d2992240;color:#d4a843}
+        .ct-ai{background:#001c2e;border-color:#58a6ff40;color:#79c0ff}
+      </style>
+      <div class="acc-wrap">
+
+        <div class="acc-item">
+          <div class="acc-header" onclick="toggleAcc(this)">
+            <div class="acc-left">
+              <span class="acc-icon">🐍</span>
+              <span class="acc-label">Python Libraries</span>
+              <span class="acc-count">7</span>
+            </div>
+            <span class="acc-arrow">▼</span>
+          </div>
+          <div class="acc-body">
+            <span class="cozy-tag ct-py">NumPy</span>
+            <span class="cozy-tag ct-py">Pandas</span>
+            <span class="cozy-tag ct-py">Seaborn</span>
+            <span class="cozy-tag ct-py">Matplotlib</span>
+            <span class="cozy-tag ct-py">Scikit-learn</span>
+            <span class="cozy-tag ct-py">Statsmodels</span>
+            <span class="cozy-tag ct-py">YData Profiling</span>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <div class="acc-header" onclick="toggleAcc(this)">
+            <div class="acc-left">
+              <span class="acc-icon">📊</span>
+              <span class="acc-label">Data Analysis &amp; EDA</span>
+              <span class="acc-count">10</span>
+            </div>
+            <span class="acc-arrow">▼</span>
+          </div>
+          <div class="acc-body">
+            <span class="cozy-tag ct-da">EDA</span>
+            <span class="cozy-tag ct-da">Data Cleaning</span>
+            <span class="cozy-tag ct-da">Feature Engineering</span>
+            <span class="cozy-tag ct-da">Statistical Analysis</span>
+            <span class="cozy-tag ct-da">Hypothesis Testing</span>
+            <span class="cozy-tag ct-da">A/B Testing</span>
+            <span class="cozy-tag ct-da">T-Test</span>
+            <span class="cozy-tag ct-da">Chi-Square Test</span>
+            <span class="cozy-tag ct-da">ANOVA</span>
+            <span class="cozy-tag ct-da">Correlation Analysis</span>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <div class="acc-header" onclick="toggleAcc(this)">
+            <div class="acc-left">
+              <span class="acc-icon">🤖</span>
+              <span class="acc-label">Machine Learning</span>
+              <span class="acc-count">10</span>
+            </div>
+            <span class="acc-arrow">▼</span>
+          </div>
+          <div class="acc-body">
+            <span class="cozy-tag ct-ml">Supervised Learning</span>
+            <span class="cozy-tag ct-ml">Unsupervised Learning</span>
+            <span class="cozy-tag ct-ml">Classification</span>
+            <span class="cozy-tag ct-ml">Regression</span>
+            <span class="cozy-tag ct-ml">Clustering</span>
+            <span class="cozy-tag ct-ml">Anomaly Detection</span>
+            <span class="cozy-tag ct-ml">Predictive Modeling</span>
+            <span class="cozy-tag ct-ml">Model Evaluation</span>
+            <span class="cozy-tag ct-ml">Cross Validation</span>
+            <span class="cozy-tag ct-ml">Fraud Detection</span>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <div class="acc-header" onclick="toggleAcc(this)">
+            <div class="acc-left">
+              <span class="acc-icon">📈</span>
+              <span class="acc-label">BI &amp; Visualization</span>
+              <span class="acc-count">4</span>
+            </div>
+            <span class="acc-arrow">▼</span>
+          </div>
+          <div class="acc-body">
+            <span class="cozy-tag ct-bi">Power BI</span>
+            <span class="cozy-tag ct-bi">Microsoft Excel</span>
+            <span class="cozy-tag ct-bi">Dashboard Design</span>
+            <span class="cozy-tag ct-bi">Data Storytelling</span>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <div class="acc-header" onclick="toggleAcc(this)">
+            <div class="acc-left">
+              <span class="acc-icon">🗄️</span>
+              <span class="acc-label">SQL &amp; Database</span>
+              <span class="acc-count">8</span>
+            </div>
+            <span class="acc-arrow">▼</span>
+          </div>
+          <div class="acc-body">
+            <span class="cozy-tag ct-sq">SQL</span>
+            <span class="cozy-tag ct-sq">MySQL</span>
+            <span class="cozy-tag ct-sq">Joins</span>
+            <span class="cozy-tag ct-sq">Window Functions</span>
+            <span class="cozy-tag ct-sq">CTEs</span>
+            <span class="cozy-tag ct-sq">Aggregate Functions</span>
+            <span class="cozy-tag ct-sq">Date Functions</span>
+            <span class="cozy-tag ct-sq">Subqueries</span>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <div class="acc-header" onclick="toggleAcc(this)">
+            <div class="acc-left">
+              <span class="acc-icon">✨</span>
+              <span class="acc-label">Generative AI &amp; Prompting</span>
+              <span class="acc-count">6</span>
+            </div>
+            <span class="acc-arrow">▼</span>
+          </div>
+          <div class="acc-body">
+            <span class="cozy-tag ct-ai">Generative AI</span>
+            <span class="cozy-tag ct-ai">Prompt Engineering</span>
+            <span class="cozy-tag ct-ai">AI-assisted Analysis</span>
+            <span class="cozy-tag ct-ai">LLM Tools</span>
+            <span class="cozy-tag ct-ai">ChatGPT</span>
+            <span class="cozy-tag ct-ai">Claude AI</span>
+          </div>
+        </div>
+
+      </div>
+      <script>
+      function toggleAcc(header) {
+        const body = header.nextElementSibling;
+        const arrow = header.querySelector('.acc-arrow');
+        const isOpen = body.classList.contains('open');
+        body.classList.toggle('open', !isOpen);
+        arrow.classList.toggle('open', !isOpen);
+      }
+      function toggleProj(header) {
+        const body = header.nextElementSibling;
+        const arrow = header.querySelector('.proj-arrow');
+        const isOpen = body.style.display === 'block';
+        body.style.display = isOpen ? 'none' : 'block';
+        arrow.textContent = isOpen ? '▼' : '▲';
+      }
+      </script>
+
+      <!-- PROJECTS -->
+      <div id="projects" style="position:relative;top:-80px;visibility:hidden"></div>
+      <div class="section-header"><span class="section-label">📁 Projects</span></div>
+      <div class="repo-list">
+        <!-- Project 1: Fraud Detection -->
+        <div class="repo-item">
+          <div class="repo-name"><svg height="14" viewBox="0 0 16 16" width="14" fill="currentColor"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8V1.5Z"/></svg>fraud-detection-ml<span class="repo-badge">Public</span></div>
+          <div class="repo-desc">A supervised machine learning project to detect fraudulent transactions in financial datasets. The model analyzes transaction data to classify whether a transaction is legitimate or fraudulent, helping prevent financial losses and improve business security.</div>
+          <div class="repo-meta">
+            <span><span class="lang-dot" style="background:#3572A5"></span> Python</span>
+            <span><span class="lang-dot" style="background:#3fb950"></span> Machine Learning</span>
+            <span><span class="lang-dot" style="background:#f1e05a"></span> Scikit-learn</span>
+            <a href="https://github.com/tusharcodez/Fraud_detection" class="cert-link-btn" target="_blank" style="margin-left:auto"><svg height="12" viewBox="0 0 16 16" width="12" fill="currentColor"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"/></svg> View Project</a>
+          </div>
+          
+          <!-- DROPDOWN SUMMARY -->
+          <div style="margin-top:10px">
+            <div onclick="toggleProj(this)" style="display:flex;align-items:center;gap:8px;cursor:pointer;padding:7px 12px;background:#161b22;border:1px solid var(--border);border-radius:6px;user-select:none;transition:background .15s" onmouseover="this.style.background='#1e2230'" onmouseout="this.style.background='#161b22'">
+              <span style="font-size:12px;color:var(--muted);font-weight:500">📋 View Project Summary</span>
+              <span style="margin-left:auto;font-size:10px;color:var(--subtle)" class="proj-arrow">▼</span>
+            </div>
+            <div class="proj-body" style="display:none;border:1px solid var(--border);border-top:none;border-radius:0 0 6px 6px;padding:18px 20px;background:#0f1117;line-height:1.7;font-size:13px">
+
+              <div style="margin-bottom:16px">
+                <div style="font-size:13px;font-weight:700;color:var(--accent);margin-bottom:6px">🔍 Project Overview</div>
+                <p style="color:var(--muted)">Built an end-to-end machine learning fraud detection system to identify fraudulent financial transactions using transactional behavior patterns. The project involved data preprocessing, feature engineering, handling class imbalance, model training, and performance evaluation.</p>
+                <p style="color:var(--muted);margin-top:6px">The model analyzes transaction-level features such as amount, time, and behavioral attributes to distinguish fraudulent vs legitimate transactions and support risk-based financial decision-making.</p>
+              </div>
+
+              <div style="margin-bottom:16px">
+                <div style="font-size:13px;font-weight:700;color:#e0af68;margin-bottom:10px">📊 Dataset Insights</div>
+                <div style="display:flex;gap:10px;flex-wrap:wrap">
+                  <div style="background:#1a1600;border:1px solid #4a3c0060;border-radius:8px;padding:10px 16px;text-align:center;flex:1;min-width:110px">
+                    <div style="font-size:18px;font-weight:700;color:#e0af68">284,807</div>
+                    <div style="font-size:11px;color:var(--muted);margin-top:2px">Total Transactions</div>
+                  </div>
+                  <div style="background:#1a1600;border:1px solid #4a3c0060;border-radius:8px;padding:10px 16px;text-align:center;flex:1;min-width:110px">
+                    <div style="font-size:18px;font-weight:700;color:#f78166">492</div>
+                    <div style="font-size:11px;color:var(--muted);margin-top:2px">Fraud Cases</div>
+                  </div>
+                  <div style="background:#1a1600;border:1px solid #4a3c0060;border-radius:8px;padding:10px 16px;text-align:center;flex:1;min-width:110px">
+                    <div style="font-size:18px;font-weight:700;color:#bc8cff">0.17%</div>
+                    <div style="font-size:11px;color:var(--muted);margin-top:2px">Fraud Ratio</div>
+                  </div>
+                </div>
+              </div>
+
+              <div style="margin-bottom:16px">
+                <div style="font-size:13px;font-weight:700;color:#3fb950;margin-bottom:10px">🎯 Model Performance Metrics</div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+                  <div style="background:#0a1f0a;border:1px solid #2ea04330;border-radius:6px;padding:8px 12px;display:flex;justify-content:space-between;align-items:center">
+                    <span style="font-size:12px;color:var(--muted)">Accuracy</span>
+                    <span style="font-size:14px;font-weight:700;color:#3fb950">99.2%</span>
+                  </div>
+                  <div style="background:#0a1f0a;border:1px solid #2ea04330;border-radius:6px;padding:8px 12px;display:flex;justify-content:space-between;align-items:center">
+                    <span style="font-size:12px;color:var(--muted)">Precision</span>
+                    <span style="font-size:14px;font-weight:700;color:#3fb950">92%</span>
+                  </div>
+                  <div style="background:#0a1f0a;border:1px solid #2ea04330;border-radius:6px;padding:8px 12px;display:flex;justify-content:space-between;align-items:center">
+                    <span style="font-size:12px;color:var(--muted)">Recall</span>
+                    <span style="font-size:14px;font-weight:700;color:#3fb950">84%</span>
+                  </div>
+                  <div style="background:#0a1f0a;border:1px solid #2ea04330;border-radius:6px;padding:8px 12px;display:flex;justify-content:space-between;align-items:center">
+                    <span style="font-size:12px;color:var(--muted)">F1-Score</span>
+                    <span style="font-size:14px;font-weight:700;color:#3fb950">88%</span>
+                  </div>
+                  <div style="background:#0a1f0a;border:1px solid #2ea04330;border-radius:6px;padding:8px 12px;display:flex;justify-content:space-between;align-items:center;grid-column:1/-1">
+                    <span style="font-size:12px;color:var(--muted)">ROC-AUC Score</span>
+                    <span style="font-size:14px;font-weight:700;color:#3fb950">0.97</span>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div style="font-size:13px;font-weight:700;color:#58a6ff;margin-bottom:8px">🧠 Business Impact</div>
+                <ul style="padding-left:16px;color:var(--muted);display:flex;flex-direction:column;gap:4px">
+                  <li>Reduced financial risk by accurately flagging suspicious transactions</li>
+                  <li>Enabled proactive fraud prevention for banks &amp; fintech companies</li>
+                  <li>Improved decision-making by identifying high-risk transaction patterns</li>
+                  <li>Demonstrated scalable ML pipeline for real-time fraud monitoring</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: AutoEDA Tool -->
+        <div class="repo-item">
+          <div class="repo-name"><svg height="14" viewBox="0 0 16 16" width="14" fill="currentColor"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8V1.5Z"/></svg>autoeda-tool<span class="repo-badge">Public</span></div>
+          <div class="repo-desc">Designed a scalable automated EDA pipeline capable of handling large datasets and generating end-to-end analytical insights with minimal manual intervention.</div>
+          <div class="repo-meta">
+            <span><span class="lang-dot" style="background:#3572A5"></span> Python</span>
+            <span><span class="lang-dot" style="background:#bc8cff"></span> Gen AI</span>
+            <span><span class="lang-dot" style="background:#58a6ff"></span> Prompt Engineering</span>
+            <a href="https://github.com/tusharcodez/AutoEda-Tool" class="cert-link-btn" target="_blank" style="margin-left:auto"><svg height="12" viewBox="0 0 16 16" width="12" fill="currentColor"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"/></svg> View Project</a>
+          </div>
+
+          <!-- DROPDOWN -->
+          <div style="margin-top:10px">
+            <div onclick="toggleProj(this)" style="display:flex;align-items:center;gap:8px;cursor:pointer;padding:7px 12px;background:#161b22;border:1px solid var(--border);border-radius:6px;user-select:none;transition:background .15s" onmouseover="this.style.background='#1e2230'" onmouseout="this.style.background='#161b22'">
+              <span style="font-size:12px;color:var(--muted);font-weight:500">🖥️ View Screenshots</span>
+              <span style="margin-left:auto;font-size:10px;color:var(--subtle)" class="proj-arrow">▼</span>
+            </div>
+            <div class="proj-body" style="display:none;border:1px solid var(--border);border-top:none;border-radius:0 0 6px 6px;padding:18px 20px;background:#0f1117;font-size:13px">
+
+              <div style="margin-bottom:14px">
+                <div style="font-size:13px;font-weight:700;color:var(--accent);margin-bottom:6px">🤖 Project Overview</div>
+                <p style="color:var(--muted);line-height:1.7">Designed a scalable automated EDA pipeline capable of handling large datasets and generating end-to-end analytical insights with minimal manual intervention. Built using advanced prompting techniques and domain expertise to automate data profiling, visualization, and summary generation.</p>
+              </div>
+
+              <div style="font-size:13px;font-weight:700;color:#58a6ff;margin-bottom:10px">🖼️ Screenshots</div>
+              <div style="display:flex;flex-direction:column;gap:10px">
+                  <div>
+                    <div style="font-size:11px;color:var(--subtle);margin-bottom:5px;font-family:monospace">Screenshot 1</div>
+                    <img src="https://raw.githubusercontent.com/tusharcodez/AutoEda-Tool/main/Screenshot%20(122).png" alt="AutoEDA Screenshot 1" style="width:100%;border-radius:6px;border:1px solid var(--border);display:block" onerror="this.parentElement.style.display='none'"/>
+                  </div>
+                  <div>
+                    <div style="font-size:11px;color:var(--subtle);margin-bottom:5px;font-family:monospace">Screenshot 2</div>
+                    <img src="https://raw.githubusercontent.com/tusharcodez/AutoEda-Tool/main/Screenshot%20(123).png" alt="AutoEDA Screenshot 2" style="width:100%;border-radius:6px;border:1px solid var(--border);display:block" onerror="this.parentElement.style.display='none'"/>
+                  </div>
+                  <div>
+                    <div style="font-size:11px;color:var(--subtle);margin-bottom:5px;font-family:monospace">Screenshot 3</div>
+                    <img src="https://raw.githubusercontent.com/tusharcodez/AutoEda-Tool/main/Screenshot%20(124).png" alt="AutoEDA Screenshot 3" style="width:100%;border-radius:6px;border:1px solid var(--border);display:block" onerror="this.parentElement.style.display='none'"/>
+                  </div>
+                  <div>
+                    <div style="font-size:11px;color:var(--subtle);margin-bottom:5px;font-family:monospace">Screenshot 4</div>
+                    <img src="https://raw.githubusercontent.com/tusharcodez/AutoEda-Tool/main/Screenshot%20(125).png" alt="AutoEDA Screenshot 4" style="width:100%;border-radius:6px;border:1px solid var(--border);display:block" onerror="this.parentElement.style.display='none'"/>
+                  </div>
+                  <div>
+                    <div style="font-size:11px;color:var(--subtle);margin-bottom:5px;font-family:monospace">Screenshot 5</div>
+                    <img src="https://raw.githubusercontent.com/tusharcodez/AutoEda-Tool/main/Screenshot%20(126).png" alt="AutoEDA Screenshot 5" style="width:100%;border-radius:6px;border:1px solid var(--border);display:block" onerror="this.parentElement.style.display='none'"/>
+                  </div>
+                  <div>
+                    <div style="font-size:11px;color:var(--subtle);margin-bottom:5px;font-family:monospace">Screenshot 6</div>
+                    <img src="https://raw.githubusercontent.com/tusharcodez/AutoEda-Tool/main/Screenshot%20(127).png" alt="AutoEDA Screenshot 6" style="width:100%;border-radius:6px;border:1px solid var(--border);display:block" onerror="this.parentElement.style.display='none'"/>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Sales Analysis Dashboard -->
+        <div class="repo-item">
+          <div class="repo-name"><svg height="14" viewBox="0 0 16 16" width="14" fill="currentColor"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8V1.5Z"/></svg>sales-analysis-dashboard<span class="repo-badge">Public</span></div>
+          <div class="repo-desc">An interactive sales analysis dashboard that visualizes key business metrics, revenue trends, and performance indicators. Built to help stakeholders make data-driven decisions through clear and intuitive visual storytelling.</div>
+          <div class="repo-meta">
+            <span><span class="lang-dot" style="background:#e34c26"></span> Power BI</span>
+            <span><span class="lang-dot" style="background:#f1e05a"></span> SQL</span>
+            <span><span class="lang-dot" style="background:#d29922"></span> Excel</span>
+            <a href="https://github.com/tusharcodez/Sales-power-bi/tree/main" class="cert-link-btn" target="_blank" style="margin-left:auto"><svg height="12" viewBox="0 0 16 16" width="12" fill="currentColor"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"/></svg> View Project</a>
+          </div>
+
+          <!-- DROPDOWN SUMMARY -->
+          <div style="margin-top:10px">
+            <div onclick="toggleProj(this)" style="display:flex;align-items:center;gap:8px;cursor:pointer;padding:7px 12px;background:#161b22;border:1px solid var(--border);border-radius:6px;user-select:none;transition:background .15s" onmouseover="this.style.background='#1e2230'" onmouseout="this.style.background='#161b22'">
+              <span style="font-size:12px;color:var(--muted);font-weight:500">📋 View Dashboard Summary & Screenshots</span>
+              <span style="margin-left:auto;font-size:10px;color:var(--subtle)" class="proj-arrow">▼</span>
+            </div>
+            <div class="proj-body" style="display:none;border:1px solid var(--border);border-top:none;border-radius:0 0 6px 6px;padding:18px 20px;background:#0f1117;line-height:1.7;font-size:13px">
+
+              <!-- Overview -->
+              <div style="margin-bottom:18px">
+                <div style="font-size:13px;font-weight:700;color:var(--accent);margin-bottom:6px">📊 Project Overview</div>
+                <p style="color:var(--muted)">Built an interactive Sales Analysis Dashboard in Power BI to visualize business performance across regions, products, and time periods. The dashboard enables stakeholders to monitor KPIs, track revenue trends, and identify growth opportunities through clear data storytelling.</p>
+              </div>
+
+              <!-- Key Features -->
+              <div style="margin-bottom:18px">
+                <div style="font-size:13px;font-weight:700;color:#e0af68;margin-bottom:10px">🎯 Key Features</div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+                  <div style="background:#1a1600;border:1px solid #4a3c0060;border-radius:6px;padding:8px 12px">
+                    <div style="font-size:12px;font-weight:600;color:#e0af68;margin-bottom:2px">📈 Revenue Tracking</div>
+                    <div style="font-size:11px;color:var(--muted)">Month-over-month and year-over-year sales trends</div>
+                  </div>
+                  <div style="background:#1a1600;border:1px solid #4a3c0060;border-radius:6px;padding:8px 12px">
+                    <div style="font-size:12px;font-weight:600;color:#e0af68;margin-bottom:2px">🗺️ Regional Analysis</div>
+                    <div style="font-size:11px;color:var(--muted)">Geographic breakdown of sales performance</div>
+                  </div>
+                  <div style="background:#1a1600;border:1px solid #4a3c0060;border-radius:6px;padding:8px 12px">
+                    <div style="font-size:12px;font-weight:600;color:#e0af68;margin-bottom:2px">🏆 Top Products</div>
+                    <div style="font-size:11px;color:var(--muted)">Best and worst performing product categories</div>
+                  </div>
+                  <div style="background:#1a1600;border:1px solid #4a3c0060;border-radius:6px;padding:8px 12px">
+                    <div style="font-size:12px;font-weight:600;color:#e0af68;margin-bottom:2px">🎛️ Dynamic Filters</div>
+                    <div style="font-size:11px;color:var(--muted)">Interactive slicers for date, region, and category</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tech Stack -->
+              <div style="margin-bottom:18px">
+                <div style="font-size:13px;font-weight:700;color:#3fb950;margin-bottom:8px">🛠️ Tech Stack</div>
+                <div style="display:flex;flex-wrap:wrap;gap:6px">
+                  <span style="background:#201200;border:1px solid #f7816640;border-radius:20px;padding:3px 10px;font-size:11px;color:#ffa657">Power BI</span>
+                  <span style="background:#1c1800;border:1px solid #d2992240;border-radius:20px;padding:3px 10px;font-size:11px;color:#d4a843">Excel</span>
+                  <span style="background:#1a0f30;border:1px solid #6e40c940;border-radius:20px;padding:3px 10px;font-size:11px;color:#bc8cff">DAX</span>
+                  <span style="background:#0a2010;border:1px solid #2ea04340;border-radius:20px;padding:3px 10px;font-size:11px;color:#56d364">Data Modeling</span>
+                </div>
+              </div>
+
+              <!-- Dashboard Screenshots -->
+              <div>
+                <div style="font-size:13px;font-weight:700;color:#58a6ff;margin-bottom:10px">🖥️ Dashboard Screenshots</div>
+                <div style="display:flex;flex-direction:column;gap:10px">
+                  <div>
+                    <div style="font-size:11px;color:var(--subtle);margin-bottom:5px;font-family:monospace">Screenshot 1</div>
+                    <img src="https://raw.githubusercontent.com/tusharcodez/Sales-power-bi/main/Screenshot%20(110).png" alt="Sales Dashboard 1" style="width:100%;border-radius:6px;border:1px solid var(--border);display:block" onerror="this.style.display='none'"/>
+                  </div>
+                  <div>
+                    <div style="font-size:11px;color:var(--subtle);margin-bottom:5px;font-family:monospace">Screenshot 2</div>
+                    <img src="https://raw.githubusercontent.com/tusharcodez/Sales-power-bi/main/Screenshot%20(111).png" alt="Sales Dashboard 2" style="width:100%;border-radius:6px;border:1px solid var(--border);display:block" onerror="this.style.display='none'"/>
+                  </div>
+                  <div>
+                    <div style="font-size:11px;color:var(--subtle);margin-bottom:5px;font-family:monospace">Screenshot 3</div>
+                    <img src="https://raw.githubusercontent.com/tusharcodez/Sales-power-bi/main/Screenshot%20(112).png" alt="Sales Dashboard 3" style="width:100%;border-radius:6px;border:1px solid var(--border);display:block" onerror="this.style.display='none'"/>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Airlines EDA -->
+        <div class="repo-item">
+          <div class="repo-name"><svg height="14" viewBox="0 0 16 16" width="14" fill="currentColor"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8V1.5Z"/></svg>airlines-eda<span class="repo-badge">Public</span></div>
+          <div class="repo-desc">A comprehensive Exploratory Data Analysis of airline operations data uncovering delay patterns, cancellation trends, and performance inefficiencies. Includes data cleaning, statistical analysis, and visual insights to support data-driven decisions in airline management.</div>
+          <div class="repo-meta">
+            <span><span class="lang-dot" style="background:#3572A5"></span> Python</span>
+            <span><span class="lang-dot" style="background:#d29922"></span> Pandas</span>
+            <span><span class="lang-dot" style="background:#58a6ff"></span> Matplotlib</span>
+            <span><span class="lang-dot" style="background:#3fb950"></span> Jupyter Notebook</span>
+            <a href="https://github.com/tusharcodez/Airlines-EDA-Exploratory-Data-Analysis-" class="cert-link-btn" target="_blank" style="margin-left:auto"><svg height="12" viewBox="0 0 16 16" width="12" fill="currentColor"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"/></svg> View Project</a>
+          </div>
+
+          <!-- DROPDOWN SUMMARY -->
+          <div style="margin-top:10px">
+            <div onclick="toggleProj(this)" style="display:flex;align-items:center;gap:8px;cursor:pointer;padding:7px 12px;background:#161b22;border:1px solid var(--border);border-radius:6px;user-select:none;transition:background .15s" onmouseover="this.style.background='#1e2230'" onmouseout="this.style.background='#161b22'">
+              <span style="font-size:12px;color:var(--muted);font-weight:500">📋 View EDA Summary</span>
+              <span style="margin-left:auto;font-size:10px;color:var(--subtle)" class="proj-arrow">▼</span>
+            </div>
+            <div class="proj-body" style="display:none;border:1px solid var(--border);border-top:none;border-radius:0 0 6px 6px;padding:18px 20px;background:#0f1117;line-height:1.7;font-size:13px">
+
+              <!-- Overview -->
+              <div style="margin-bottom:18px">
+                <div style="font-size:13px;font-weight:700;color:var(--accent);margin-bottom:6px">✈️ Project Overview</div>
+                <p style="color:var(--muted)">Conducted a comprehensive Exploratory Data Analysis on airline operations data to identify delay patterns, cancellation trends, and performance inefficiencies. The analysis focused on uncovering time-based trends, route performance, and operational bottlenecks to support data-driven decision-making in airline management.</p>
+              </div>
+
+              <!-- Key Analysis Areas -->
+              <div style="margin-bottom:18px">
+                <div style="font-size:13px;font-weight:700;color:#e0af68;margin-bottom:10px">🔍 Key Analysis Areas</div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+                  <div style="background:#0d1f35;border:1px solid #1e4a7a40;border-radius:6px;padding:8px 12px">
+                    <div style="font-size:12px;font-weight:600;color:#79c0ff;margin-bottom:2px">⏱️ Delay Pattern Analysis</div>
+                    <div style="font-size:11px;color:var(--muted)">Identified peak delay hours, routes, and seasonal trends</div>
+                  </div>
+                  <div style="background:#0d1f35;border:1px solid #1e4a7a40;border-radius:6px;padding:8px 12px">
+                    <div style="font-size:12px;font-weight:600;color:#79c0ff;margin-bottom:2px">❌ Cancellation Trends</div>
+                    <div style="font-size:11px;color:var(--muted)">Explored cancellation causes and most affected routes</div>
+                  </div>
+                  <div style="background:#0d1f35;border:1px solid #1e4a7a40;border-radius:6px;padding:8px 12px">
+                    <div style="font-size:12px;font-weight:600;color:#79c0ff;margin-bottom:2px">🛣️ Route Performance</div>
+                    <div style="font-size:11px;color:var(--muted)">Ranked routes by on-time performance and efficiency</div>
+                  </div>
+                  <div style="background:#0d1f35;border:1px solid #1e4a7a40;border-radius:6px;padding:8px 12px">
+                    <div style="font-size:12px;font-weight:600;color:#79c0ff;margin-bottom:2px">📅 Time-Based Trends</div>
+                    <div style="font-size:11px;color:var(--muted)">Monthly, weekly, and hourly flight performance patterns</div>
+                  </div>
+                  <div style="background:#0d1f35;border:1px solid #1e4a7a40;border-radius:6px;padding:8px 12px">
+                    <div style="font-size:12px;font-weight:600;color:#79c0ff;margin-bottom:2px">🏢 Airline Comparison</div>
+                    <div style="font-size:11px;color:var(--muted)">Compared carrier performance across key metrics</div>
+                  </div>
+                  <div style="background:#0d1f35;border:1px solid #1e4a7a40;border-radius:6px;padding:8px 12px">
+                    <div style="font-size:12px;font-weight:600;color:#79c0ff;margin-bottom:2px">⚠️ Operational Bottlenecks</div>
+                    <div style="font-size:11px;color:var(--muted)">Detected inefficiencies in turnaround and scheduling</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tech Stack -->
+              <div style="margin-bottom:18px">
+                <div style="font-size:13px;font-weight:700;color:#3fb950;margin-bottom:8px">🛠️ Tech Stack</div>
+                <div style="display:flex;flex-wrap:wrap;gap:6px">
+                  <span style="background:#0d2040;border:1px solid #1e4a7a40;border-radius:20px;padding:3px 10px;font-size:11px;color:#79c0ff">Python</span>
+                  <span style="background:#0d2040;border:1px solid #1e4a7a40;border-radius:20px;padding:3px 10px;font-size:11px;color:#79c0ff">Pandas</span>
+                  <span style="background:#0d2040;border:1px solid #1e4a7a40;border-radius:20px;padding:3px 10px;font-size:11px;color:#79c0ff">Matplotlib</span>
+                  <span style="background:#0d2040;border:1px solid #1e4a7a40;border-radius:20px;padding:3px 10px;font-size:11px;color:#79c0ff">Seaborn</span>
+                  <span style="background:#0d2040;border:1px solid #1e4a7a40;border-radius:20px;padding:3px 10px;font-size:11px;color:#79c0ff">Jupyter Notebook</span>
+                  <span style="background:#0d2040;border:1px solid #1e4a7a40;border-radius:20px;padding:3px 10px;font-size:11px;color:#79c0ff">NumPy</span>
+                </div>
+              </div>
+
+              <!-- Business Impact -->
+              <div style="margin-bottom:18px">
+                <div style="font-size:13px;font-weight:700;color:#58a6ff;margin-bottom:8px">🧠 Business Impact</div>
+                <ul style="padding-left:16px;color:var(--muted);display:flex;flex-direction:column;gap:4px">
+                  <li>Helped identify high-delay routes for operational improvement</li>
+                  <li>Provided actionable insights on peak cancellation periods</li>
+                  <li>Enabled data-driven scheduling and resource allocation</li>
+                  <li>Uncovered carrier performance benchmarks for competitive analysis</li>
+                </ul>
+              </div>
+
+              <!-- Notebook Link -->
+              <div style="padding-top:12px;border-top:1px solid var(--border-light)">
+                <a href="https://github.com/tusharcodez/Airlines-EDA-Exploratory-Data-Analysis-/blob/main/airlines%20eda%20(1).ipynb" target="_blank" style="display:inline-flex;align-items:center;gap:7px;background:#1a2035;border:1px solid #7aa2f740;border-radius:6px;padding:7px 14px;font-size:12px;font-weight:600;color:#7aa2f7;text-decoration:none">
+                  <svg height="12" viewBox="0 0 16 16" width="12" fill="currentColor"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"/></svg> View Jupyter Notebook on GitHub
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CERTIFICATIONS -->
+      <div id="certifications" style="position:relative;top:-80px;visibility:hidden"></div>
+      <div class="section-header"><span class="section-label">🏅 Certifications</span></div>
+      <div class="cert-grid">
+
+        <div class="cert-card">
+          <div class="cert-top">
+            <div class="cert-icon ci-oracle">OCI</div>
+            <span class="cert-verified">✓ Verified</span>
+          </div>
+          <div class="cert-name">Oracle Certified Data Scientist</div>
+          <div class="cert-issuer">Oracle Corporation</div>
+          <a href="https://raw.githubusercontent.com/tusharcodez/Certifications/refs/heads/main/orace.jfif" class="cert-link-btn" target="_blank">
+            <svg height="12" viewBox="0 0 16 16" width="12" fill="currentColor"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"/></svg>
+            View Certificate
+          </a>
+          
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-top">
+            <div class="cert-icon ci-tutedude">TD</div>
+            <span class="cert-verified">✓ Verified</span>
+          </div>
+          <div class="cert-name">Data Analyst Certificate</div>
+          <div class="cert-issuer">Tutedude</div>
+          <a href="https://upskill.tutedude.com/certificate/TD-TUSH-DA-1006" class="cert-link-btn" target="_blank">
+            <svg height="12" viewBox="0 0 16 16" width="12" fill="currentColor"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"/></svg>
+            View Certificate
+          </a>
+          
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-top">
+            <div class="cert-icon ci-nielit">NL</div>
+            <span class="cert-verified">✓ Verified</span>
+          </div>
+          <div class="cert-name">O Level Certification</div>
+          <div class="cert-issuer">NIELIT · National Institute of Electronics &amp; Information Technology</div>
+          <a href="https://drive.google.com/file/d/1Xl0Ja_YMLFsUzVQngeS1dlE35wdf1yUq/view" class="cert-link-btn" target="_blank">
+            <svg height="12" viewBox="0 0 16 16" width="12" fill="currentColor"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"/></svg>
+            View Certificate
+          </a>
+          
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-top">
+            <div class="cert-icon ci-boston">BIA</div>
+            <span class="cert-verified">✓ Verified</span>
+          </div>
+          <div class="cert-name">Data Science &amp; Generative AI</div>
+          <div class="cert-issuer">Boston Institute of Analytics</div>
+          <a href="#" class="cert-link-btn" target="_blank">
+            <svg height="12" viewBox="0 0 16 16" width="12" fill="currentColor"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"/></svg>
+            View Certificate
+          </a>
+          
+        </div>
+
+      </div>
+
+      <!-- VOLUNTEERING -->
+      <div id="volunteering" style="position:relative;top:-80px;visibility:hidden"></div>
+      <div class="section-header"><span class="section-label">🤝 Volunteering</span></div>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:0 16px;margin-bottom:28px">
+
+        <div class="vol-item">
+          <div class="vol-avatar" style="background:linear-gradient(135deg,#1a2d4a,#1e3a5f)">📚</div>
+          <div style="flex:1">
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px">
+              <span style="font-size:14px;font-weight:600;color:var(--text)">Volunteer</span>
+              <span class="vol-badge">✓ Government Event</span>
+            </div>
+            <div style="font-size:13px;color:var(--accent);margin-bottom:2px">National Book Fair</div>
+            <div style="font-size:12px;color:var(--muted);margin-bottom:8px">
+              Organised by <strong style="color:var(--text)">Ministry of Education, Government of India</strong> · New Delhi World Book Fair
+            </div>
+            <div style="font-size:13px;color:var(--muted);line-height:1.6">
+              Volunteered at the New Delhi World Book Fair, one of Asia's largest book fairs organized by the National Book Trust under the Ministry of Education. Assisted in event coordination, visitor guidance, and promotional activities across the exhibition grounds.
+            </div>
+            <div class="exp-tags" style="margin-top:8px">
+              <span class="exp-tag">Event Management</span>
+              <span class="exp-tag">Public Coordination</span>
+              <span class="exp-tag">Ministry of Education</span>
+            </div>
+            <div style="margin-top:10px;display:flex;align-items:center;gap:8px">
+              <a href="https://raw.githubusercontent.com/tusharcodez/Certifications/refs/heads/main/book%20fair%5D.jfif" class="cert-link-btn" target="_blank">
+                <svg height="12" viewBox="0 0 16 16" width="12" fill="currentColor"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"/></svg>
+                View Certificate
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="vol-item">
+          <div class="vol-avatar" style="background:linear-gradient(135deg,#1a2e1a,#1e3d1e)">🌱</div>
+          <div style="flex:1">
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px">
+              <span style="font-size:14px;font-weight:600;color:var(--text)">Social Media Promoter</span>
+              <span class="vol-badge" style="background:#1f1a2e;border-color:#bc8cff30;color:var(--purple)">NGO</span>
+            </div>
+            <div style="font-size:13px;color:var(--accent);margin-bottom:2px">Pehchaan The Street School</div>
+            <div style="font-size:12px;color:var(--muted);margin-bottom:8px">
+              Non-Governmental Organisation · Delhi, India
+            </div>
+            <div style="font-size:13px;color:var(--muted);line-height:1.6">
+              Contributed as a Social Media Promoter for Pehchaan The Street School, an NGO dedicated to educating underprivileged street children. Helped raise awareness through social media campaigns, content creation, and digital outreach to attract volunteers and donations.
+            </div>
+            <div class="exp-tags" style="margin-top:8px">
+              <span class="exp-tag">Social Media</span>
+              <span class="exp-tag">Content Creation</span>
+              <span class="exp-tag">Digital Outreach</span>
+              <span class="exp-tag">NGO</span>
+            </div>
+            <div style="margin-top:10px;display:flex;align-items:center;gap:8px">
+              <a href="https://verified.sertifier.com/en/verify/05336816527389/" class="cert-link-btn" target="_blank">
+                <svg height="12" viewBox="0 0 16 16" width="12" fill="currentColor"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"/></svg>
+                View Certificate
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CONTACT -->
+      <div id="contact" style="position:relative;top:-80px;visibility:hidden"></div>
+      <div class="section-header"><span class="section-label">📬 Get In Touch</span></div>
+      <div class="contact-box">
+        <p style="color:var(--muted);font-size:14px;line-height:1.7">
+          I'm actively looking for <strong style="color:var(--text)">Data Analyst</strong> opportunities. Feel free to reach out for roles, collaborations, or projects.
+        </p>
+        <div class="contact-links">
+          <a href="https://www.linkedin.com/in/tusharupadhyaydelhi/" target="_blank" class="contact-btn">
+            <svg height="16" width="16" viewBox="0 0 24 24" fill="#0a66c2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://mail.google.com/mail/?view=cm&to=corporatetushar24@gmail.com" target="_blank" class="contact-btn">
+            <svg height="16" width="16" viewBox="0 0 16 16" fill="#8b949e"><path d="M1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25v-8.5C0 2.784.784 2 1.75 2zM1.5 12.251c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V5.809L8.38 8.966a.75.75 0 0 1-.76 0L1.5 5.809v6.442zm13-8.181v-.32a.25.25 0 0 0-.25-.25H1.75a.25.25 0 0 0-.25.25v.32L8 7.909l6.5-3.839z"/></svg>
+            <span class="__cf_email__" data-cfemail="d2b1bda0a2bda0b3a6b7a6a7a1bab3a0e0e692b5bfb3bbbefcb1bdbf">[email&#160;protected]</span>
+          </a>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<footer>
+  <div class="page-wrap">
+    <span>Tushar Upadhyay</span> &middot; Data Analyst &middot; Delhi, India &middot; 2025
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<style>
+.back-top{position:fixed;bottom:28px;right:28px;background:#1c1f26;border:1px solid #7aa2f7;border-radius:50%;width:42px;height:42px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#7aa2f7;font-size:18px;font-weight:700;transition:all .2s;opacity:1;z-index:9999;text-decoration:none;box-shadow:0 2px 16px #7aa2f730}
+.back-top.show{opacity:1}
+.back-top:hover{background:#252830;border-color:#7aa2f7;color:#7aa2f7;transform:translateY(-3px);text-decoration:none}
+</style>
+<a href="#overview" class="back-top" id="backTop" title="Back to top">↑</a>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+function toggleAcc(header) {
+  const body = header.nextElementSibling;
+  const arrow = header.querySelector('.acc-arrow');
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  arrow.classList.toggle('open', !isOpen);
+}
+function toggleProj(header) {
+  const body = header.nextElementSibling;
+  const arrow = header.querySelector('.proj-arrow');
+  const isOpen = body.style.display === 'block';
+  body.style.display = isOpen ? 'none' : 'block';
+  arrow.textContent = isOpen ? '▼' : '▲';
+}
+const sections = ['overview','projects','certifications','volunteering','contact'];
+const tabs = document.querySelectorAll('.nav-tab');
+function setActive(id) {
+  tabs.forEach(t => {
+    t.classList.remove('active');
+    if (t.getAttribute('href') === '#' + id) t.classList.add('active');
+  });
+}
+window.addEventListener('scroll', () => {
+  let current = 'overview';
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && window.scrollY + 100
